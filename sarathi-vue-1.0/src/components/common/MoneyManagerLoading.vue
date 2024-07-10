@@ -1,0 +1,3 @@
+<template>
+  <span><i class="fas fa-spinner fa-spin"></i></span>
+</template>

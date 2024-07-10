@@ -1,0 +1,70 @@
+<div class="mm-login-user">
+  <div class="login-user-box">
+    <h3 class="login-user-heading">Login Details</h3>
+    <div class="login-user-form-container">
+      <div class="login-user-form">
+        <div class="key">Email</div>
+        <div class="value">
+          <input
+            type="text"
+            id="login-user-email"
+            placeholder="Email"
+            (focus)="inputOnFocus('login-user-email')"
+            [(ngModel)]="email"
+          />
+          <app-input-field-error
+            *ngIf="errorFlagEmail"
+            [errorMessage]="errorMessageEmail"
+          ></app-input-field-error>
+        </div>
+      </div>
+      <div class="login-user-form">
+        <div class="key">Password</div>
+        <div class="value">
+          <input
+            type="password"
+            id="login-user-password"
+            placeholder="Password"
+            (focus)="inputOnFocus('login-user-password')"
+            [(ngModel)]="password"
+          />
+          <app-input-field-error
+            *ngIf="errorFlagPassword"
+            [errorMessage]="errorMessagePassword"
+          ></app-input-field-error>
+        </div>
+      </div>
+      <div class="login-user-form"></div>
+      <div class="login-user-clear-submit">
+        <span>
+          <app-money-manager-button
+            [buttonTitle]="'Clear'"
+            [buttonClass]="'btn-secondary'"
+            (onButtonClick)="onClear()"
+          ></app-money-manager-button>
+        </span>
+        <div class="login-user-submit">
+          <app-money-manager-button
+            [buttonTitle]="'Submit'"
+            [buttonClass]="'btn-primary'"
+            (onButtonClick)="onSubmit()"
+          ></app-money-manager-button>
+        </div>
+      </div>
+      <div class="login-user-form"></div>
+      <div class="login-user-form">
+        <label>
+          New User? <a class="link" routerLink = "/register-user">Register</a> here
+        </label>
+      </div>
+    </div>
+  </div>
+  <app-error-modal
+    *ngIf="showErrorLogin"
+    (closeError)="closeErrorLogin()"
+  >
+    <span body>
+      {{ errorMessageLogin }}
+    </span>
+  </app-error-modal>
+</div>

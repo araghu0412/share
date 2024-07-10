@@ -1,0 +1,78 @@
+<hr>
+<a [routerLink]="'/'">Home</a>
+<hr>
+<app-money-manager-button
+  [buttonTitle]="'Button Title'"
+  [buttonClass]="'btn-primary'"
+  (onButtonClick)="onButtonClick()"
+>
+</app-money-manager-button>
+<hr>
+<app-money-manager-radio
+  [resetRadio]="resetRadio"
+  [radioList]="radioList"
+  [radioDefault]="radioDefault"
+  [radioName]="'demoRadioName'"
+  (onRadioSelect)="onRadioSelect($event)"
+></app-money-manager-radio>
+<hr>
+<app-money-manager-dropdown
+  [resetDropdown]="resetDropdown"
+  [dropdownList]="dropdownList"
+  (onDropdownSelect)="onDropdownSelect($event)"
+></app-money-manager-dropdown>
+<hr>
+<app-money-manager-check-box
+  [resetCheckBox]="resetCheckBox"
+  [checkBoxList]="checkBoxList"
+  [checkBoxName]="'demoCheckBox'"
+  (onCheckBoxSelect)="onCheckBoxSelect($event)"
+></app-money-manager-check-box>
+<hr />
+  <app-money-manager-date-picker
+    [resetDatePicker]="resetDatePicker"
+    (onSelectedFullDate)="onDateSelected($event)"
+  ></app-money-manager-date-picker>
+<hr>
+<app-money-manager-button
+  [buttonTitle]="'Loading Modal'"
+  [buttonClass]="'btn-primary btn-sm'"
+  (onButtonClick)="onLoadingModalClick()"
+></app-money-manager-button>
+<hr />
+<app-money-manager-button
+  [buttonTitle]="'Reset'"
+  [buttonClass]="'btn-primary'"
+  (onButtonClick)="resetData()"
+></app-money-manager-button>
+<hr>
+<app-money-manager-button
+  [buttonTitle]="'Open Error'"
+  [buttonClass]="'btn-primary'"
+  (onButtonClick)="showError()"
+></app-money-manager-button>
+<app-error-modal
+  *ngIf="isError"
+  (closeError)="closeError($event)"
+>
+  <span body>
+    {{ errorMessage }}
+  </span>
+</app-error-modal> | 
+<app-money-manager-button
+  [buttonTitle]="'Open Success'"
+  [buttonClass]="'btn-primary'"
+  (onButtonClick)="showSuccess()"
+></app-money-manager-button>
+<app-success-modal
+  *ngIf="isSuccess"
+  (closeSuccess)="closeSuccess($event)"
+>
+  <span body>
+    {{ successMessage }}
+  </span>
+</app-success-modal>
+
+<app-money-manager-loading-modal
+  *ngIf="loadingModal"
+></app-money-manager-loading-modal>

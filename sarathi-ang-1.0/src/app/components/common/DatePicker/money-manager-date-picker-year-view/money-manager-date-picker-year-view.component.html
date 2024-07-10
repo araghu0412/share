@@ -1,0 +1,28 @@
+<div class="date-picker-year-view">
+  <div class="date-picker-top-container">
+    <span
+      class="date-picker-top date-picker-navigate"
+      (click)="onPreviousYearListClick()"
+    ><i class="fas fa-caret-left"></i></span>
+    <span class="date-picker-top date-picker-year-combination">{{ displayStartYear + " - " + displayEndYear }}</span>
+    <span
+      class="date-picker-top date-picker-navigate"
+      (click)="onNextYearListClick()"
+    ><i class="fas fa-caret-right"></i></span>
+  </div>
+  <div class="date-picker-table">
+    <div class="date-picker-year-heading">YEAR</div>
+    <table>
+      <tr *ngFor="let calendarYear of calendarYearsList">
+        <td
+          *ngFor="let yearList of calendarYear.yearList"
+          [id]="[displayYear === yearList.year ? 'date-picker-year' : '']"
+          class="date-picker-year"
+          (click)="onYearSelect(yearList.year)"
+        >
+          {{ yearList.year }}
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

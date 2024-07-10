@@ -1,0 +1,49 @@
+<div
+  class="mm-date-picker"
+  [tabindex]="tabindex"
+  (blur)="onDatePickerBlur()"
+>
+  <div
+    class="date-picker-container"
+    (click)="onDatePickerClick()"
+  >
+    <i class="fas fa-calendar-alt date-icon"></i>
+    <label class="date-label">{{ selectedFullDate }}</label>
+  </div>
+  <div
+    *ngIf="showDatePicker"
+    class="date-picker-select"
+  >
+    <app-money-manager-date-picker-date-view
+      *ngIf="datePickerContentView === 'DATE'"
+      [dayMap]="dayMap"
+      [displayMonth]="displayMonth"
+      [displayYear]="displayYear"
+      [calendarDaysList]="calendarDaysList"
+      [selectedDate]="selectedDate"
+      [selectedMonth]="selectedMonth"
+      [selectedYear]="selectedYear"
+      (onDateSelect)="onDateSelect($event)"
+      (onPreviousMonth)="onPreviousMonth()"
+      (onNextMonth)="onNextMonth()"
+      (onMonthClick)="onMonthClick()"
+      (onYearClick)="onYearClick()"
+    ></app-money-manager-date-picker-date-view>
+    <app-money-manager-date-picker-month-view
+      *ngIf="datePickerContentView === 'MONTH'"
+      [calendarMonthsList]="calendarMonthsList"
+      [displayMonth]="displayMonth"
+      (onMonthSelect)="onMonthSelect($event)"
+    ></app-money-manager-date-picker-month-view>
+    <app-money-manager-date-picker-year-view
+      *ngIf="datePickerContentView === 'YEAR'"
+      [displayYear]="displayYear"
+      [calendarYearsList]="calendarYearsList"
+      [displayStartYear]="displayStartYear"
+      [displayEndYear]="displayEndYear"
+      (onPreviousYearList)="onPreviousYearList()"
+      (onNextYearList)="onNextYearList()"
+      (onYearSelect)="onYearSelect($event)"
+    ></app-money-manager-date-picker-year-view>
+  </div>
+</div>

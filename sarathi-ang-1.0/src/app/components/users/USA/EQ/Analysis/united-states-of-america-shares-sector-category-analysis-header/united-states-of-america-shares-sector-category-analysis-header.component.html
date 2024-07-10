@@ -1,0 +1,63 @@
+<div class="united-states-of-america-shares-sector-category-analysis-header">
+  <div class="services-analysis-sector-category-header">
+    <div class="header">
+      <span class="left-items">
+        <app-money-manager-button
+          [buttonClass]="'navigation-button btn-sm'"
+          (onButtonClick)="onBackButtonClick()"
+        >
+          <span title>
+            <i class="fas fa-long-arrow-alt-left"></i> Back
+          </span>
+        </app-money-manager-button>
+      </span>
+  
+      <span class="left-items">
+        <app-money-manager-button
+          [buttonClass]="isRefreshButtonDisabled ? 'btn-sm' : 'btn-primary btn-sm'"
+          [buttonDisabled]="isRefreshButtonDisabled"
+          (onButtonClick)="onRefreshClick()"
+        >
+          <span title>
+            Refresh <i class="fa fa-refresh"></i>
+          </span>
+        </app-money-manager-button>
+      </span>
+
+      <span class="left-items">
+        <app-money-manager-dropdown
+          [resetDropdown]="resetTypeDropdown"
+          [disableDropdown]="isTypeDropdownDisabled"
+          [dropdownList]="typeDropdownList"
+          [placeholder]="typeDropdownPlaceholder"
+          (onDropdownSelect)="onTypeDropdownSelect($event)"
+        ></app-money-manager-dropdown>
+      </span>
+
+      <span class="left-items">
+        <app-money-manager-dropdown
+          *ngIf="showOneAnalysis"
+          [resetDropdown]="resetOneAnalysisDropdown"
+          [disableDropdown]="isTypeDropdownDisabled"
+          [dropdownList]="oneAnalysisDropdownList"
+          [placeholder]="'One Analysis'"
+          (onDropdownSelect)="onOneAnalysisDropdownSelect($event)"
+        ></app-money-manager-dropdown>
+      </span>
+
+      <div class="right">
+        <span class="right-items">
+          <app-money-manager-button
+            [buttonClass]="isSettingsButtonDisabled ? 'btn-sm' : 'btn-secondary btn-sm'"
+            [buttonDisabled]="isSettingsButtonDisabled"
+            (onButtonClick)="onSettingsClick()"
+          >
+            <span title>
+              <i class="fa fa-cog"></i>
+            </span>
+          </app-money-manager-button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

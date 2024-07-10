@@ -1,0 +1,34 @@
+<div class="bhaaratha-shares-dividend-yield-analysis">
+  <app-bhaaratha-shares-sector-category-analysis-header
+    [isRefreshButtonDisabled]="isRefreshButtonDisabled"
+    [isTypeDropdownDisabled]="isTypeDropdownDisabled"
+    [typeDropdownList]="typeDropdownList"
+    [typeDropdownPlaceholder]="typeDropdownPlaceholder"
+    [isSettingsButtonDisabled]="isSettingsButtonDisabled"
+    [oneAnalysisDropdownList]="oneAnalysisDropdownList"
+    [showOneAnalysis]="showOneAnalysis"
+    (onRefreshClick)="onRefreshClick()"
+    (onSettingsClick)="onSettingsClick()"
+    (onSectorAnalysisSelect)="onSectorAnalysisSelect()"
+    (onCategoryAnalysisSelect)="onCategoryAnalysisSelect()"
+    (onOneAnalysisDropdownSelect)="onOneAnalysisDropdownSelect($event)"
+    (onBackButtonClick)="onbackButtonClick()"
+  ></app-bhaaratha-shares-sector-category-analysis-header>
+
+  <app-bhaaratha-shares-sector-category-analysis-data
+    [loading]="loading"
+    [noRecords]="noRecords"
+    [chartOptions]="chartOptions"
+    [total]="total"
+  ></app-bhaaratha-shares-sector-category-analysis-data>
+
+  <app-bhaaratha-shares-sector-category-analysis-settings-modal
+    *ngIf="showSettings"
+    [longTermRadioList]="longTermRadioList"
+    [longTermRadioDefault]="longTermRadioDefault"
+    [valueInPercentageRadioList]="valueInPercentageRadioList"
+    [valueInPercentageRadioDefault]="valueInPercentageRadioDefault"
+    (onCloseSettingsClick)="onCloseSettingsClick()"
+    (onConfirmSettingsClick)="onConfirmSettingsClick($event)"
+  ></app-bhaaratha-shares-sector-category-analysis-settings-modal>
+</div>

@@ -1,0 +1,56 @@
+<div class="bhaaratha-shares-one-share-details-bse-nse-data">
+  <div class="services-one-script-details-exchange-data">
+    <div class="services-one-script-exchange-form">
+      <div class="key">Script Name</div>
+      <div class="value">{{ oneShareDetails.scriptName }}</div>
+    </div>
+
+    <div class="services-one-script-exchange-form">
+      <div class="key">Script Code</div>
+      <div class="value">{{ oneShareDetails.scriptCode }}</div>
+    </div>
+
+    <div class="services-one-script-exchange-form">
+      <div class="key">Current Market Price</div>
+      <div class="value">{{ oneShareDetails.currentMarketPrice }} [ <span appHighlightByNumbers [value]="oneShareDetails.currentMarketPriceChange" [fontWeight]="'bold'">{{ oneShareDetails.currentMarketPriceChange }}</span> ( <span appHighlightByNumbers [value]="oneShareDetails.currentMarketPriceChangePercentage" [fontWeight]="'bold'">{{ oneShareDetails.currentMarketPriceChangePercentage }}%</span> ) ]</div>
+    </div>
+
+    <div class="services-one-script-exchange-form">
+      <div class="key">Previous Close</div>
+      <div class="value">{{ oneShareDetails.previousClose }}</div>
+    </div>
+
+    <div class="services-one-script-exchange-form">
+      <div class="key">Open Price</div>
+      <div class="value">{{ oneShareDetails.openPrice }}</div>
+    </div>
+
+    <div
+      *ngIf="oneShareDetails.dailyHighLowValue"
+      class="services-one-script-exchange-form"
+    >
+      <div class="key">Today's High/Low</div>
+      <div class="value">
+        <app-money-manager-min-max-bar
+          [lowValue]="oneShareDetails.dailyLow"
+          [highValue]="oneShareDetails.dailyHigh"
+          [highLowValue]="oneShareDetails.dailyHighLowValue"
+        ></app-money-manager-min-max-bar>
+      </div>
+    </div>
+
+    <div
+      *ngIf="oneShareDetails.fiftyTwoWeekHighLowValue"
+      class="services-one-script-exchange-form"
+    >
+      <div class="key">52 Week High/Low</div>
+      <div class="value">
+        <app-money-manager-min-max-bar
+          [lowValue]="oneShareDetails.fiftyTwoWeekLow"
+          [highValue]="oneShareDetails.fiftyTwoWeekHigh"
+          [highLowValue]="oneShareDetails.fiftyTwoWeekHighLowValue"
+        ></app-money-manager-min-max-bar>
+      </div>
+    </div>
+  </div>
+</div>

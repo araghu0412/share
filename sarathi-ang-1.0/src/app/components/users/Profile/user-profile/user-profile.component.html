@@ -1,0 +1,319 @@
+<div class="mm-user-profile">
+  <div class="user-profile-box">
+    <h3 class="user-profile-heading">{{ userName }}'s Profile</h3>
+    <div class="user-profile-container">
+      <div class="user-profile-data">
+        <div class="key">First Name</div>
+        <div class="value label-border">{{ firstName }}</div>
+      </div>
+      <div class="user-profile-data">
+        <div class="key">Middle Name</div>
+        <div class="value label-border">{{ middleName }}</div>
+      </div>
+      <div class="user-profile-data">
+        <div class="key">Last Name</div>
+        <div class="value label-border">{{ lastName }}</div>
+      </div>
+      <div class="user-profile-data">
+        <div class="key">Preferred Name</div>
+        <div class="value label-border">{{ preferredName }}</div>
+      </div>
+      <div class="user-profile-data">
+        <div class="key">Gender</div>
+        <div class="value label-border">{{ gender }}</div>
+      </div>
+      <div class="user-profile-data">
+        <div class="key">Email</div>
+        <div class="value label-border">{{ email }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="user-profile-collapsible"
+    [ngClass]="[!showPasswordUpdateContent ? 'user-profile-collapsible-default' : '']"
+  >
+    <div class="user-profile-collapsible-heading" (click)="onPasswordUpdateCollapsibleClick()">
+      <span class="left-items">
+        Password Update
+      </span>
+      <div class="right">
+        <span *ngIf="!showPasswordUpdateContent" class="right-items">+</span>
+        <span *ngIf="showPasswordUpdateContent" class="right-items">-</span>
+      </div>
+    </div>
+    <div *ngIf="showPasswordUpdateContent"
+      class="user-profile-collapsible-content"
+    >
+      <div class="user-profile-collapsible-content-data">
+        <div class="key">Old Password</div>
+        <div class="value">
+          <input
+            type="password"
+            id="user-profile-old-password"
+            placeholder="Old Password"
+            (focus)="passwordUpdateInputOnFocus('user-profile-old-password')"
+            [(ngModel)]="oldPassword"
+          />
+          <app-input-field-error
+            *ngIf="errorFlagOldPassword"
+            [errorMessage]="errorMessageOldPassword"
+          ></app-input-field-error>
+        </div>
+      </div>
+
+      <div class="user-profile-collapsible-content-data">
+        <div class="key">New Password</div>
+        <div class="value">
+          <input
+            type="password"
+            id="user-profile-new-password"
+            placeholder="New Password"
+            (focus)="passwordUpdateInputOnFocus('user-profile-new-password')"
+            [(ngModel)]="newPassword"
+          />
+          <app-input-field-error
+            *ngIf="errorFlagNewPassword"
+            [errorMessage]="errorMessageNewPassword"
+          ></app-input-field-error>
+        </div>
+      </div>
+
+      <div class="user-profile-collapsible-content-data">
+        <div class="key">Confirm New Password</div>
+        <div class="value">
+          <input
+            type="password"
+            id="user-profile-confirm-new-password"
+            placeholder="Confirm New Password"
+            (focus)="passwordUpdateInputOnFocus('user-profile-confirm-new-password')"
+            [(ngModel)]="confirmNewPassword"
+          />
+          <app-input-field-error
+            *ngIf="errorFlagConfirmNewPassword"
+            [errorMessage]="errorMessageConfirmNewPassword"
+          ></app-input-field-error>
+        </div>
+      </div>
+
+      <div class="user-profile-collapsible-content-clear-submit">
+        <span>
+          <app-money-manager-button
+            [buttonTitle]="'Clear'"
+            [buttonClass]="'btn-secondary'"
+            (onButtonClick)="onPasswordUpdateClear()"
+          ></app-money-manager-button>
+        </span>
+        <div class="user-profile-collapsible-content-submit">
+          <app-money-manager-button
+            [buttonTitle]="'Submit'"
+            [buttonClass]="'btn-primary'"
+            (onButtonClick)="onPasswordUpdateSubmit()"
+          ></app-money-manager-button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="user-profile-collapsible"
+    [ngClass]="[!showPinUpdateContent ? 'user-profile-collapsible-default' : '']"
+  >
+    <div class="user-profile-collapsible-heading" (click)="onPinUpdateCollapsibleClick()">
+      <span class="left-items">
+        PIN Update
+      </span>
+      <div class="right">
+        <span *ngIf="!showPinUpdateContent" class="right-items">+</span>
+        <span *ngIf="showPinUpdateContent" class="right-items">-</span>
+      </div>
+    </div>
+    <div *ngIf="showPinUpdateContent"
+      class="user-profile-collapsible-content"
+    >
+      <div class="user-profile-collapsible-content-data">
+        <div class="key">Old Pin</div>
+        <div class="value">
+          <input
+            type="password"
+            id="user-profile-old-pin"
+            placeholder="Old PIN"
+            (focus)="pinUpdateInputOnFocus('user-profile-old-pin')"
+            [(ngModel)]="oldPin"
+          />
+          <app-input-field-error
+            *ngIf="errorFlagOldPin"
+            [errorMessage]="errorMessageOldPin"
+          ></app-input-field-error>
+        </div>
+      </div>
+
+      <div class="user-profile-collapsible-content-data">
+         <div class="key">New PIN</div>
+         <div class="value">
+          <input
+            type="password"
+            id="user-profile-new-pin"
+            placeholder="New PIN"
+            (focus)="pinUpdateInputOnFocus('user-profile-new-pin')"
+            [(ngModel)]="newPin"
+          />
+          <app-input-field-error
+            *ngIf="errorFlagNewPin"
+            [errorMessage]="errorMessageNewPin"
+          ></app-input-field-error>
+        </div>
+      </div>
+
+      <div class="user-profile-collapsible-content-data">
+        <div class="key">Confirm New PIN</div>
+        <div class="value">
+          <input
+            type="password"
+            id="user-profile-confirm-new-pin"
+            placeholder="Confirm New PIN"
+            (focus)="pinUpdateInputOnFocus('user-profile-confirm-new-pin')"
+            [(ngModel)]="confirmNewPin"
+          />
+          <app-input-field-error
+            *ngIf="errorFlagConfirmNewPin"
+            [errorMessage]="errorMessageConfirmNewPin"
+          ></app-input-field-error>
+        </div>
+      </div>
+
+      <div class="user-profile-collapsible-content-clear-submit">
+        <span>
+          <app-money-manager-button
+            [buttonTitle]="'Clear'"
+            [buttonClass]="'btn-secondary'"
+            (onButtonClick)="onPinUpdateClear()"
+          ></app-money-manager-button>
+        </span>
+        <div class="user-profile-collapsible-content-submit">
+          <app-money-manager-button
+            [buttonTitle]="'Submit'"
+            [buttonClass]="'btn-primary'"
+            (onButtonClick)="onPinUpdateSubmit()"
+          ></app-money-manager-button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="user-profile-collapsible"
+    [ngClass]="[!showCountriesAndServicesUpdateContent ? 'user-profile-collapsible-default' : '']"
+  >
+    <div class="user-profile-collapsible-heading" (click)="onCountriesAndServicesUpdateCollapsibleClick()">
+      <span class="left-items">
+        Countries and Services Update
+      </span>
+      <div class="right">
+        <span *ngIf="!showCountriesAndServicesUpdateContent" class="right-items">+</span>
+        <span *ngIf="showCountriesAndServicesUpdateContent" class="right-items">-</span>
+      </div>
+    </div>
+    <div *ngIf="showCountriesAndServicesUpdateContent"
+      class="user-profile-collapsible-content"
+    >
+      <div class="user-profile-collapsible-content-data">
+        <div class="key">Country</div>
+        <div class="value">
+          <app-money-manager-check-box
+            [resetCheckBox]="resetCountriesCheckBox"
+            [checkBoxList]="countriesCheckBoxList"
+            [checkBoxName]="'userProfileCountry'"
+            (onCheckBoxSelect)="onCountryCheckBoxSelect($event)"
+          ></app-money-manager-check-box>
+          <div>
+            <app-input-field-error
+              *ngIf="errorFlagCountry"
+              [errorMessage]="errorMessageCountry"
+            ></app-input-field-error>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="user-profile-collapsible-content-data"
+        *ngFor="let servicesOfferedByCountry of servicesOfferedByCountryMap | keyvalue: originalOrder"
+      >
+        <div class="key">Services ({{ servicesOfferedByCountry.value.countryCode }})</div>
+        <div class="value">
+          <app-money-manager-check-box
+            [resetCheckBox]="resetServicesOfferedCheckBox"
+            [checkBoxList]="servicesOfferedByCountry.value.servicesOfferedCheckBoxList"
+            [checkBoxName]="servicesOfferedByCountry.value.countryCode"
+            (onCheckBoxSelect)="onServiceCheckBoxSelect($event, servicesOfferedByCountry.value)"
+          ></app-money-manager-check-box>
+          <div>
+            <app-input-field-error
+              *ngIf="errorFlagCountry"
+              [errorMessage]="errorMessageCountry"
+            ></app-input-field-error>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="errorFlagService" class="user-profile-collapsible-content-data">
+        <div class="key"></div>
+        <div class="value">
+          <app-input-field-error
+            [errorMessage]="errorMessageService"
+          ></app-input-field-error>
+        </div>
+      </div>
+
+      <div class="user-profile-collapsible-content-clear-submit">
+        <span>
+          <app-money-manager-button
+            [buttonTitle]="'Clear'"
+            [buttonClass]="'btn-secondary'"
+            (onButtonClick)="onCountriesAndServicesUpdateClear()"
+          ></app-money-manager-button>
+        </span>
+        <div class="user-profile-collapsible-content-submit">
+          <app-money-manager-button
+            [buttonTitle]="'Submit'"
+            [buttonClass]="'btn-primary'"
+            (onButtonClick)="onCountriesAndServicesUpdateSubmit()"
+          ></app-money-manager-button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-error-modal
+    *ngIf="showError"
+    (closeError)="closeError()"
+  >
+    <span body>
+      <span [innerHtml]="errorMessage"></span>
+    </span>
+  </app-error-modal>
+
+  <app-success-modal
+    *ngIf="showSuccess"
+    (closeSuccess)="closeSuccess()"
+  >
+    <span body>
+      <span [innerHtml]="successMessage"></span>
+    </span>
+  </app-success-modal>
+
+  <app-confirmation-modal
+    *ngIf="showConfirmation"
+    (onCloseConfirmation)="onCloseConfirmation()"
+    (onConfirmationContinue)="onConfirmationContinue()"
+  >
+    <span body>
+      <span [innerHtml]="confirmationMessage"></span>
+    </span>
+  </app-confirmation-modal>
+
+  <app-money-manager-loading-modal
+    *ngIf="showLoadingModal"
+    [headingDisplay]="'Updating, your patience is greatly valued'"
+  ></app-money-manager-loading-modal>
+</div>

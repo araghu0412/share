@@ -1,0 +1,31 @@
+<div
+  class="mm-dropdown"
+  [tabindex]="tabindex"
+  (blur)="onDropdownBlur()"
+>
+  <span
+    class="dropdown-class"
+    (click)="onDropdownClick()"
+  >
+    <label
+      class="dropdown-label"
+      [ngClass]="[disableDropdown ? 'dropdown-disabled' : '']"
+    >
+      {{ selectedValue | max15Chars }}
+      <span class="arrow">
+        <span *ngIf="showDropdown" class="arrow-up"></span>
+        <span *ngIf="!showDropdown" class="arrow-down"></span>
+      </span>
+    </label>
+  </span>
+  <div class="dropdown-value-position" *ngIf="showDropdown">
+    <div *ngFor="let dropdown of dropdownList">
+      <div
+        class="dropdown-value"
+        (click)="onDropdownValueClick(dropdown)"
+      >
+        {{ dropdown.value }}
+      </div>
+    </div>
+  </div>
+</div>

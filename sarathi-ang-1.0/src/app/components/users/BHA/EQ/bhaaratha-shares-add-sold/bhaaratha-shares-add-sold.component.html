@@ -1,0 +1,250 @@
+<div class="bhaaratha-shares-add-sold">
+  <div class="services-add-scripts-sold">
+    <app-bhaaratha-shares-add-shares-header
+      (onBackButtonClicked)="onBackButtonClicked()"
+    ></app-bhaaratha-shares-add-shares-header>
+    <div class="services-add-scipts-box">
+      <h3 class="services-add-scipts-heading">
+        Fill the details below
+      </h3>
+      <div class="services-add-scipts-form-container">
+        <div class="services-add-scipts-form">
+          <div class="key">Stock Exchange</div>
+          <div class="value">
+            <span
+              id="sold-bhaaratha-share-stock-exchange"
+              (change)="inputOnFocus('sold-bhaaratha-share-stock-exchange')"
+            >
+              <app-money-manager-radio
+                [resetRadio]="resetStockExchangeRadio"
+                [radioList]="stockExchangeRadioList"
+                [radioName]="'bhaarathaSharesAddSoldstockExchangeRadio'"
+                (onRadioSelect)="onStockExchangeSelect($event)"
+              ></app-money-manager-radio>
+            </span>
+            <div>
+              <app-input-field-error
+                *ngIf="errorFlagStockExchange"
+                [errorMessage]="errorMessageStockExchange"
+              ></app-input-field-error>
+            </div>
+          </div>
+        </div>
+        <div class="services-add-scipts-form">
+          <div class="key">BSE Script Code</div>
+          <div class="value">
+            <input
+              type="text"
+              id="sold-bhaaratha-share-bse-script-code"
+              placeholder="BSE Script Code"
+              (focus)="inputOnFocus('sold-bhaaratha-share-bse-script-code')"
+              [(ngModel)]="bseScriptCode"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagBseScriptCode"
+              [errorMessage]="errorMessageBseScriptCode"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="services-add-scipts-form">
+          <div class="key">NSE Script Code</div>
+          <div class="value">
+            <input
+              type="text"
+              id="sold-bhaaratha-share-nse-script-code"
+              placeholder="NSE Script Code"
+              (focus)="inputOnFocus('sold-bhaaratha-share-nse-script-code')"
+              [(ngModel)]="nseScriptCode"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagNseScriptCode"
+              [errorMessage]="errorMessageNseScriptCode"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="services-add-scipts-form">
+          <div class="key">Moneycontrol Code</div>
+          <div class="value">
+            <input
+              type="text"
+              id="sold-bhaaratha-share-money-control-code"
+              placeholder="Moneycontrol Code"
+              (focus)="inputOnFocus('sold-bhaaratha-share-money-control-code')"
+              [(ngModel)]="moneycontrolCode"
+              (change)="getShareNameByScriptCode()"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagMoneycontrolCode"
+              [errorMessage]="errorMessageMoneycontrolCode"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="services-add-scipts-form">
+          <div class="key">Share Name</div>
+          <div class="value">
+            <div id="sold-bhaaratha-share-script-name" class="services-add-scipts-script-name">
+              <label *ngIf="shareNameLoading;else nseShareNameTemplate">
+                <app-money-manager-loading></app-money-manager-loading>
+              </label>
+              <ng-template #nseShareNameTemplate>
+                <label>
+                  {{ shareName }}
+                </label>
+              </ng-template>
+            </div>
+            <app-input-field-error
+              *ngIf="errorFlagShareName"
+              [errorMessage]="errorMessageShareName"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="services-add-scipts-form">
+          <div class="key">Sell Date</div>
+          <div class="value">
+            <span id="sold-bhaaratha-share-sell-date"></span>
+            <app-money-manager-date-picker
+              [resetDatePicker]="resetSellDatePicker"
+              (onSelectedFullDate)="onSellDateSelect($event)"
+            ></app-money-manager-date-picker>
+            <app-input-field-error
+              *ngIf="errorFlagSellDate"
+              [errorMessage]="errorMessageSellDate"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="services-add-scipts-form">
+          <div class="key">Sell Quantity</div>
+          <div class="value">
+            <input
+              type="text"
+              id="sold-bhaaratha-share-sell-quantity"
+              placeholder="Sell Quantity"
+              (focus)="inputOnFocus('sold-bhaaratha-share-sell-quantity')"
+              [(ngModel)]="sellQuantity"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagSellQuantity"
+              [errorMessage]="errorMessageSellQuantity"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="services-add-scipts-form">
+          <div class="key">Sell Price</div>
+          <div class="value">
+            <input
+              type="text"
+              id="sold-bhaaratha-share-sell-price"
+              placeholder="Sell Price"
+              (focus)="inputOnFocus('sold-bhaaratha-share-sell-price')"
+              [(ngModel)]="sellPrice"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagSellPrice"
+              [errorMessage]="errorMessageSellPrice"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="services-add-scipts-form">
+          <div class="key">Sell Brokerage</div>
+          <div class="value">
+            <input
+              type="text"
+              id="sold-bhaaratha-share-sell-brokerage"
+              placeholder="Sell Brokerage"
+              (focus)="inputOnFocus('sold-bhaaratha-share-sell-brokerage')"
+              [(ngModel)]="sellBrokerage"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagSellBrokerage"
+              [errorMessage]="errorMessageSellBrokerage"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="services-add-scipts-form">
+          <div class="key">Sell STT</div>
+          <div class="value">
+            <input
+              type="text"
+              id="sold-bhaaratha-share-sell-stt"
+              placeholder="Sell STT"
+              (focus)="inputOnFocus('sold-bhaaratha-share-sell-stt')"
+              [(ngModel)]="sellSTT"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagSellSTT"
+              [errorMessage]="errorMessageSellSTT"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="services-add-scipts-form">
+          <div class="key">Sell Expenditure</div>
+          <div class="value">
+            <input
+              type="text"
+              id="sold-bhaaratha-share-sell-expenditure"
+              placeholder="Sell Expenditure"
+              (focus)="inputOnFocus('sold-bhaaratha-share-sell-expenditure')"
+              [(ngModel)]="sellExpenditure"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagSellExpenditure"
+              [errorMessage]="errorMessageSellExpenditure"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="services-add-scipts-form">
+          <div class="key">Sell Non Expenditure</div>
+          <div class="value">
+            <input
+              type="text"
+              id="sold-bhaaratha-share-sell-non-expenditure"
+              placeholder="Sell Non Expenditure"
+              (focus)="inputOnFocus('sold-bhaaratha-share-sell-non-expenditure')"
+              [(ngModel)]="sellNonExpenditure"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagSellNonExpenditure"
+              [errorMessage]="errorMessageSellNonExpenditure"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="services-add-scipts-form"></div>
+        <div class="services-add-scipts-clear">
+          <span>
+            <app-money-manager-button
+              [buttonTitle]="'Clear'"
+              [buttonClass]="'btn-secondary'"
+              (onButtonClick)="onBhaarathaSharesAddSharesClear()"
+            ></app-money-manager-button>
+          </span>
+          <div class="services-add-scipts-submit">
+            <app-money-manager-button
+              [buttonTitle]="'Submit'"
+              [buttonClass]="'btn-primary'"
+              (onButtonClick)="onBhaarathaSharesAddSharesSubmit()"
+            ></app-money-manager-button>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+
+    <app-error-modal
+      *ngIf="showError"
+      (closeError)="closeError()"
+    >
+      <span body>
+        {{ errorMessage }}
+      </span>
+    </app-error-modal>
+  
+    <app-success-modal
+      *ngIf="showSuccess"
+      (closeSuccess)="closeSuccess()"
+    >
+      <span body>
+        {{ successMessage }}
+      </span>
+    </app-success-modal>
+  </div>
+</div>

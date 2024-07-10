@@ -1,0 +1,20 @@
+<div class="date-picker-month-view">
+  <div class="date-picker-top-container">
+    <span class="date-picker-top">{{ displayMonth }}</span>
+    <div class="date-picker-table">
+      <div class="date-picker-month-heading">MONTH</div>
+      <table>
+        <tr *ngFor="let calendarMonth of calendarMonthsList">
+          <td
+            *ngFor="let monthList of calendarMonth.monthList"
+            [id]="[displayMonth === monthList.month ? 'date-picker-month-id' : '' ]"
+            class="date-picker-month"
+            (click)="onMonthSelect(monthList.month)"
+          >
+            {{ monthList.month }}
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

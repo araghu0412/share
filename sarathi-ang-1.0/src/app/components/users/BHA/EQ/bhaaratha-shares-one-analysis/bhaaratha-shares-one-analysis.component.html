@@ -1,0 +1,12 @@
+<div class="bhaaratha-shares-one-shares-analysis">
+  <app-bhaaratha-shares-one-analysis-header
+    (onBackButtonClick)="onBackButtonClick()"
+  ></app-bhaaratha-shares-one-analysis-header>
+
+  <app-bhaaratha-shares-sector-category-analysis-data
+    [loading]="loading"
+    [noRecords]="noRecords"
+    [chartOptions]="chartOptions"
+    [total]="total"
+  ></app-bhaaratha-shares-sector-category-analysis-data>
+</div>

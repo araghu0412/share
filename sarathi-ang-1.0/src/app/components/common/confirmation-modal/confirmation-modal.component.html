@@ -1,0 +1,40 @@
+<div class="mm-confirmation">
+  <div class="mm-confirmation-modal">
+    <div class="mm-confirmation-modal-backdrop">
+      <div class="mm-confirmation-modal-dialog">
+        <div class="mm-confirmation-modal-content">
+          <div class="mm-confirmation-modal-header">
+            <h3 class="mm-confirmation-modal-title">
+              Do you want to continue?
+            </h3>
+          </div>
+          <div
+            class="mm-confirmation-modal-body"
+          >
+            <div class="mm-confirmation-modal-body-content">
+              <ng-content select="[body]"></ng-content>
+            </div>
+          </div>
+          <div class="mm-confirmation-modal-footer">
+            <div class="mm-confirmation-close">
+              <span>
+                <app-money-manager-button
+                  [buttonTitle]="'Close'"
+                  [buttonClass]="'btn btn-danger'"
+                  (onButtonClick)="onCloseClick()"
+                ></app-money-manager-button>
+              </span>
+              <div class="mm-confirmation-continue">
+                <app-money-manager-button
+                  [buttonTitle]="'Continue'"
+                  [buttonClass]="'btn btn-primary'"
+                  (onButtonClick)="onContinueClick()"
+                ></app-money-manager-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

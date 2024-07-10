@@ -1,0 +1,13 @@
+<button
+  class="btn"
+  [disabled]="buttonDisabled"
+  [ngClass]="[buttonDisabled ? 'btn-disabled' : '', buttonClass]"
+  (click)="onButtonClicked()"
+>
+  <span *ngIf="buttonTitle; else titleFromComponent">
+    {{ buttonTitle }}
+  </span>
+  <ng-template #titleFromComponent>
+    <ng-content select="[title]"></ng-content>
+  </ng-template>
+</button>

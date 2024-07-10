@@ -1,0 +1,14 @@
+<span class="mm-radio" *ngFor="let radioData of radioList">
+  <span class="mm-radio-custom">
+    <label class="mm-radio-label">
+      <input
+        type="radio"
+        [value]="radioData"
+        [name]="radioName"
+        (change)="onRadioSelect()"
+        [(ngModel)]="radioSelected"
+      />
+        <span>{{ " " + radioData.value }}</span>
+    </label>
+  </span>
+</span>

@@ -1,0 +1,75 @@
+<div class="bhaaratha-shares-bought-sold-header">
+  <div class="services-bought-sold-header">
+    <div class="header">
+      <span class="left-items">
+        <input
+          class="search-term-text"
+          type="text"
+          placeholder="Search"
+          [disabled]="isSearchFieldDisabled"
+          [(ngModel)]="searchText"
+        />
+        <app-money-manager-button
+          [buttonClass]="isSearchButtonDisabled || searchText === '' ? 'btn-sm' : 'btn-primary btn-sm'"
+          [buttonDisabled]="isSearchButtonDisabled || searchText === ''"
+          (onButtonClick)="onSearchClick()"
+        >
+          <span title>
+            <i class="fa fa-search"></i>
+          </span>
+        </app-money-manager-button>
+      </span>
+      <span class="left-items">
+        <app-money-manager-button
+          [buttonClass]="isRefreshButtonDisabled ? 'btn-sm' : 'btn-primary btn-sm'"
+          [buttonDisabled]="isRefreshButtonDisabled"
+          (onButtonClick)="onRefreshClick()"
+        >
+          <span title>
+            <i class="fa fa-refresh"></i>
+          </span>
+        </app-money-manager-button>
+      </span>
+
+      <span class="left-items">
+        <app-money-manager-dropdown
+          [resetDropdown]="resetHeaderDropdown"
+          [disableDropdown]="isHeaderDropdownDisabled"
+          [dropdownList]="headerDropdownList"
+          [placeholder]="headerDropdownPlaceholder"
+          (onDropdownSelect)="onHeaderDropdownSelect($event)"
+        ></app-money-manager-dropdown>
+      </span>
+
+      <div class="right">
+        <span class="right-items">
+          <app-money-manager-button *ngIf="type === 'bought';else soldButton"
+            [buttonTitle]="'Bought?'"
+            [buttonClass]="'btn-buy btn-sm'"
+            (onButtonClick)="onSharesBoughtClick()"
+          ></app-money-manager-button>
+          <ng-template #soldButton>
+            <app-money-manager-button *ngIf="type === 'sold'"
+              [buttonTitle]="'Sold?'"
+              [buttonClass]="'btn-sell btn-sm'"
+              (onButtonClick)="onSharesSoldClick()"
+            ></app-money-manager-button>
+          </ng-template>
+        </span>
+
+        <span class="right-items">
+          <app-money-manager-button
+            *ngIf="type === 'bought'"
+            [buttonClass]="isSettingsButtonDisabled ? 'btn-sm' : 'btn-secondary btn-sm'"
+            [buttonDisabled]="isSettingsButtonDisabled"
+            (onButtonClick)="onSettingsClick()"
+          >
+            <span title>
+              <i class="fa fa-cog"></i>
+            </span>
+          </app-money-manager-button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

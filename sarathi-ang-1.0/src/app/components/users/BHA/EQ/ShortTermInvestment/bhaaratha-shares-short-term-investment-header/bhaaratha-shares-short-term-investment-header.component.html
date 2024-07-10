@@ -1,0 +1,42 @@
+<div class="bhaaratha-shares-short-term-investment-header">
+  <div class="services-short-term-investment-header">
+    <div class="header">
+      <span class="left-items">
+        <app-money-manager-button
+          *ngIf="oneShareShortTermInvestment"
+          [buttonClass]="'navigation-button btn-sm'"
+          (onButtonClick)="onBackButtonClick()"
+        >
+          <span title>
+            <i class="fas fa-long-arrow-alt-left"></i> Back
+          </span>
+        </app-money-manager-button>
+      </span>
+
+      <span class="left-items">
+        <app-money-manager-button
+          [buttonClass]="isRefreshButtonDisabled ? 'btn-sm' : 'btn-primary btn-sm'"
+          [buttonDisabled]="isRefreshButtonDisabled"
+          (onButtonClick)="onRefreshClick()"
+        >
+          <span title>
+            <i class="fa fa-refresh"></i> Refresh
+          </span>
+        </app-money-manager-button>
+      </span>
+
+      <div class="right">
+        <span class="right-items">
+          <app-money-manager-button
+            [buttonClass]="'btn-buy btn-sm'"
+            (onButtonClick)="onAddShortTermInvestmentClick()"
+          >
+            <span title>
+              Add
+            </span>
+          </app-money-manager-button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="bhaaratha-shares-short-term-investment-data">
+  <div class="services-short-term-investment-data">
+    <div *ngIf="loading;else noRecordsTemplate" class="spinner">
+      <app-money-manager-loading></app-money-manager-loading>
+    </div>
+    <ng-template #noRecordsTemplate>
+      <div *ngIf="noRecords;else tableTemplate" class="no-records">
+        <div>
+          ******* NO RECORDS *******
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #tableTemplate>
+      <div class="services-short-term-investment-table">
+        <div class="mm-table">
+          <table class="mm-table-data">
+            <thead>
+              <tr>
+                <th>SCRIPT NAME</th>
+                <th *ngIf="!oneShareShortTermInvestment"></th>
+                <th>PURCHASE PRICE PER UNIT</th>
+                <th>PURCHASE TOTAL</th>
+                <th>SELL PRICE PER UNIT</th>
+                <th>SELL TOTAL</th>
+                <th>P/L</th>
+                <th>P/L (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let shortTermInvestment of shortTermInvestmentDataList">
+                <td>
+                  <span *ngIf="!oneShareShortTermInvestment;else nseShareNameTemplate" class="link" (click)="onShortTermInvestmentScriptClick(shortTermInvestment.bseCode)">
+                    {{ shortTermInvestment.shareName }}
+                  </span>
+                  <ng-template #nseShareNameTemplate>
+                    <span>
+                      {{ shortTermInvestment.shareName }}
+                    </span>
+                  </ng-template>
+                </td>
+                <td *ngIf="!oneShareShortTermInvestment">
+                  <span
+                    class="money-manager-delete-icon"
+                    (click)="onDeleteShortTermInvestmentClick(shortTermInvestment.bseCode, shortTermInvestment.shareName)"
+                  >
+                    <i class="fa fa-trash"></i>
+                  </span>
+                </td>
+                <td>{{ shortTermInvestment.purchasePrice }}</td>
+                <td>{{ shortTermInvestment.purchaseTotal }}</td>
+                <td>{{ shortTermInvestment.sellPrice }}</td>
+                <td>{{ shortTermInvestment.sellTotal }}</td>
+                <td appHighlightByNumbers [value]="shortTermInvestment.profitLoss">{{ shortTermInvestment.profitLoss }}</td>
+                <td appHighlightByNumbers [value]="shortTermInvestment.profitLossPercentage">{{ shortTermInvestment.profitLossPercentage }}%</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>TOTAL</td>
+                <td *ngIf="!oneShareShortTermInvestment"></td>
+                <td>{{ shortTermInvestmentTotal.purchasePrice }}</td>
+                <td>{{ shortTermInvestmentTotal.purchaseTotal }}</td>
+                <td>{{ shortTermInvestmentTotal.sellPrice }}</td>
+                <td>{{ shortTermInvestmentTotal.sellTotal }}</td>
+                <td appHighlightByNumbers [value]="shortTermInvestmentTotal.profitLoss">{{ shortTermInvestmentTotal.profitLoss }}</td>
+                <td appHighlightByNumbers [value]="shortTermInvestmentTotal.profitLossPercentage">{{ shortTermInvestmentTotal.profitLossPercentage }}%</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+      <div class="services-short-term-investment-returns-content">
+        Your short term investment has provided a total return of <span appHighlightByNumbers [value]="shortTermInvestmentTotal.profitLoss" [fontWeight]="'bold'">{{ shortTermInvestmentTotal.profitLoss }}</span> (<span appHighlightByNumbers [value]="shortTermInvestmentTotal.profitLossPercentage" [fontWeight]="'bold'">{{ shortTermInvestmentTotal.profitLossPercentage }}%</span>)
+      </div>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="date-picker-date-view">
+  <div class="date-picker-top-container">
+    <span
+      class="date-picker-top"
+      (click)="onPreviousMonthClick()"
+    ><i class="fas fa-caret-left"></i></span>
+    <span
+      class="date-picker-top"
+      (click)="onMonthClick()"
+    >{{ displayMonth }}</span>
+    <span
+      class="date-picker-top"
+      (click)="onYearClick()"
+    >{{ displayYear }}</span>
+    <span
+      class="date-picker-top"
+      (click)="onNextMonthClick()"
+    ><i class="fas fa-caret-right"></i></span>
+  </div>
+  <div class="date-picker-table">
+    <table>
+      <tr>
+        <td *ngFor="let map of dayMap | keyvalue: originalOrder"> {{ map.value }} </td>
+      </tr>
+      <tr *ngFor="let calendarDay of calendarDaysList">
+        <td
+          *ngFor="let weeklyDay of calendarDay.weeklyDaysList"
+          [id]="[weeklyDay.value === selectedDate && displayMonth === selectedMonth && displayYear === selectedYear ? 'date-picker-date-id' : '']"
+          [ngClass]="[weeklyDay.value !== '' ? 'date-picker-date' : '']"
+          (click)="onDateClick(weeklyDay.value)"
+        >
+          {{ weeklyDay.value }}
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

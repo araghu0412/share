@@ -1,0 +1,96 @@
+<div class="bhaaratha-shares-bulk-upload">
+  <div class="services-bulk-upload">
+    <div class="header">
+      <span class="left-items">
+        <app-money-manager-button
+          [buttonTitle]="'Home'"
+          [buttonClass]="'btn-primary btn-sm'"
+          (onButtonClick)="onHomeButtonClick()"
+        ></app-money-manager-button>
+      </span>
+
+      <span class="left-items">
+        <app-money-manager-button
+          [buttonTitle]="'Bought'"
+          [buttonClass]="'btn-buy btn-sm btn-sm'"
+          (onButtonClick)="onBoughtButtonClick()"
+        ></app-money-manager-button>
+      </span>
+
+      <span class="left-items">
+        <app-money-manager-button
+          [buttonTitle]="'Sold'"
+          [buttonClass]="'btn-sell btn-sm'"
+          (onButtonClick)="onSoldButtonClick()"
+        ></app-money-manager-button>
+      </span>
+
+      <div class="right">
+        <span class="right-items">
+          <app-money-manager-button
+            [buttonClass]="'btn-secondary btn-sm'"
+            (onButtonClick)="onDownloadBulkUploadDocumentClick()"
+          >
+            <span title>
+              <i class="fa fa-download"></i>
+            </span>
+          </app-money-manager-button>
+        </span>
+      </div>
+    </div>
+
+    <div class="spinner" *ngIf="loading">
+      <app-money-manager-loading></app-money-manager-loading>
+    </div>
+    <div *ngIf="!loading" class="services-bulk-upload-area">
+      <div class="services-bulk-upload-input">
+        <input type="file" id="file-upload" #bhaarathaSharesBulkUploadFileUpload class="input-file-upload" (change)="onInputFileUploadChange($event)">
+        <app-money-manager-button
+          [buttonClass]="'btn-secondary btn-sm'"
+          (onButtonClick)="uploadFileClick()"
+        >
+          <span title>
+            <i class="fa fa-upload"></i>
+          </span>
+        </app-money-manager-button>
+        <span class="file-name">{{ filename }}</span>
+      </div>
+      <div class="services-bulk-upload-clear-submit">
+        <span>
+          <app-money-manager-button
+            [buttonTitle]="'Clear'"
+            [buttonDisabled]="file === null"
+            [buttonClass]="file === null ? 'btn-sm' : 'btn-secondary btn-sm'"
+            (onButtonClick)="onBulkUploadClear()"
+          ></app-money-manager-button>
+        </span>
+        <div class="services-bulk-upload-submit">
+          <app-money-manager-button
+            [buttonTitle]="'Submit'"
+            [buttonDisabled]="file === null"
+            [buttonClass]="file === null ? 'btn-sm' : 'btn-primary btn-sm'"
+            (onButtonClick)="onBulkUploadSubmit()"
+          ></app-money-manager-button>
+        </div>
+      </div>
+    </div>
+
+    <app-success-modal
+      *ngIf="showSuccess"
+      (closeSuccess)="closeSuccess()"
+    >
+      <span body>
+        <span [innerHtml]="successMessage"></span>
+      </span>
+    </app-success-modal>
+
+    <app-error-modal
+      *ngIf="showError"
+      (closeError)="closeError()"
+    >
+      <span body>
+        <span [innerHtml]="errorMessage"></span>
+      </span>
+    </app-error-modal>
+  </div>
+</div>

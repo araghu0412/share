@@ -1,0 +1,15 @@
+<div class="united-states-of-america-shares-investment-research">
+  <app-united-states-of-america-shares-investment-research-header
+    [isRefreshButtonDisabled]="isRefreshButtonDisabled"
+    (onRefreshClick)="onRefreshClick()"
+    (onBackButtonClick)="onBackButtonClick()"
+  ></app-united-states-of-america-shares-investment-research-header>
+  <app-united-states-of-america-shares-investment-research-data
+    [loading]="loading"
+    [noRecords]="noRecords"
+    [investmentResearchList]="investmentResearchList"
+    [sortingColumn]="sortingColumn"
+    [sortingType]="sortingType"
+    (sortInvestmentResearch)="sortInvestmentResearch($event)"
+  ></app-united-states-of-america-shares-investment-research-data>
+</div>

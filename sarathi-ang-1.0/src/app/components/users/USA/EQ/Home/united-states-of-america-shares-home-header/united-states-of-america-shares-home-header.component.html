@@ -1,0 +1,10 @@
+<div class="bhaaratha-shares-home-header">
+  <div class="services-home-header">
+    <app-money-manager-dropdown
+      [resetDropdown]="otherServicesDropdownResetDropdown"
+      [dropdownList]="otherServicesDropdownList"
+      [placeholder]="'Other Services'"
+      (onDropdownSelect)="onOtherServicesDropdownSelect($event)"
+    ></app-money-manager-dropdown>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<span
+  class="mm-checkbox"
+  *ngFor="let checkBox of checkBoxList"
+>
+  <span class="mm-checkbox-custom">
+    <label class="mm-checkbox-label" [ngClass]="[checkBox.isDisabled ? 'mm-checkbox-label-disabled' : '']">
+      <input
+        type="checkbox"
+        [name]="checkBoxName"
+        [disabled]="checkBox.isDisabled"
+        [(ngModel)]="checkBox.isChecked"
+        (change)="onCheckBoxSelect(checkBox, checkBox.isChecked)"
+      />
+      <span>{{ " " + checkBox.value }}</span>
+    </label>
+  </span>
+</span>

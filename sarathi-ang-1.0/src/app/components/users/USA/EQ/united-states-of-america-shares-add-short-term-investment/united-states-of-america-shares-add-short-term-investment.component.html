@@ -1,0 +1,179 @@
+<div class="united-states-of-america-shares-add-short-term-investment">
+  <div class="services-add-short-term-investment">
+    <app-united-states-of-america-shares-add-short-term-investment-header
+      (onBackButtonClick)="onBackButtonClick()"
+    ></app-united-states-of-america-shares-add-short-term-investment-header>
+    <div class="add-short-term-investment-box">
+      <h3 class="add-short-term-investment-heading">
+        Short Term Investment
+      </h3>
+      <div class="add-short-term-investment-form-container">
+        <div class="add-short-term-investment-form">
+          <div class="key">Yahoo Code</div>
+          <div class="value">
+            <input
+              type="text"
+              id="sti-united-states-of-america-share-yahoo-code"
+              placeholder="Yahoo Code"
+              (focus)="inputOnFocus('sti-united-states-of-america-share-yahoo-code')"
+              [(ngModel)]="yahooCode"
+              (change)="getShareName()"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagYahooCode"
+              [errorMessage]="errorMessageYahooCode"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="add-short-term-investment-form">
+          <div class="key">Share Name</div>
+          <div class="value">
+            <div id="sti-united-states-of-america-share-script-name" class="services-short-term-investment-script-name">
+              <label *ngIf="shareNameLoading;else nseShareNameTemplate">
+                <app-money-manager-loading></app-money-manager-loading>
+              </label>
+              <ng-template #nseShareNameTemplate>
+                <label>
+                  {{ shareName }}
+                </label>
+              </ng-template>
+            </div>
+            <app-input-field-error
+              *ngIf="errorFlagShareName"
+              [errorMessage]="errorMessageShareName"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="add-short-term-investment-form">
+          <div class="key">Purchase Date</div>
+          <div class="value">
+            <span id="sti-united-states-of-america-share-purchase-date"></span>
+            <app-money-manager-date-picker
+              [resetDatePicker]="resetPurchaseDatePicker"
+              (onSelectedFullDate)="onPurchaseDateSelect($event)"
+            ></app-money-manager-date-picker>
+            <app-input-field-error
+              *ngIf="errorFlagPurchaseDate"
+              [errorMessage]="errorMessagePurchaseDate"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="add-short-term-investment-form">
+          <div class="key">Purchase Quantity</div>
+          <div class="value">
+            <input
+              type="text"
+              id="sti-united-states-of-america-share-purchase-quantity"
+              placeholder="Purchase Quantity"
+              (focus)="inputOnFocus('sti-united-states-of-america-share-purchase-quantity')"
+              [(ngModel)]="purchaseQuantity"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagPurchaseQuantity"
+              [errorMessage]="errorMessagePurchaseQuantity"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="add-short-term-investment-form">
+          <div class="key">Purchase Price</div>
+          <div class="value">
+            <input
+              type="text"
+              id="sti-united-states-of-america-share-purcahse-price"
+              placeholder="Purchase Price"
+              (focus)="inputOnFocus('sti-united-states-of-america-share-purcahse-price')"
+              [(ngModel)]="purchasePrice"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagPurchasePrice"
+              [errorMessage]="errorMessagePurchasePrice"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="add-short-term-investment-form">
+          <div class="key">Purchase Commission</div>
+          <div class="value">
+            <input
+              type="text"
+              id="sti-united-states-of-america-share-purchase-commission"
+              placeholder="Purchase Commission"
+              (focus)="inputOnFocus('sti-united-states-of-america-share-purchase-commission')"
+              [(ngModel)]="purchaseCommission"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagPurchaseCommission"
+              [errorMessage]="errorMessagePurchaseCommission"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="add-short-term-investment-form">
+          <div class="key">Purchase Transaction Fees</div>
+          <div class="value">
+            <input
+              type="text"
+              id="sti-united-states-of-america-share-purchase-transaction-fees"
+              placeholder="Purchase Transaction Fees"
+              (focus)="inputOnFocus('sti-united-states-of-america-share-purchase-transaction-fees')"
+              [(ngModel)]="purchaseTransactionFees"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagPurchaseTransactionFees"
+              [errorMessage]="errorMessagePurchaseTransactionFees"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="add-short-term-investment-form">
+          <div class="key">Purchase Other Fees</div>
+          <div class="value">
+            <input
+              type="text"
+              id="sti-united-states-of-america-share-purchase-other-fees"
+              placeholder="Purchase Other Fees"
+              (focus)="inputOnFocus('sti-united-states-of-america-share-purchase-other-fees')"
+              [(ngModel)]="purchaseOtherFees"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagPurchaseOtherFees"
+              [errorMessage]="errorMessagePurchaseOtherFees"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="add-short-term-investment-form"></div>
+        <div class="add-short-term-investment-clear">
+          <span>
+            <app-money-manager-button
+              [buttonTitle]="'Clear'"
+              [buttonClass]="'btn-secondary'"
+              (onButtonClick)="onAddShortTermInvestmentClear()"
+            ></app-money-manager-button>
+          </span>
+          <div class="add-short-term-investment-submit">
+            <app-money-manager-button
+              [buttonTitle]="'Submit'"
+              [buttonClass]="'btn-primary'"
+              (onButtonClick)="onAddShortTermInvestmentSubmit()"
+            ></app-money-manager-button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <app-error-modal
+      *ngIf="showError"
+      (closeError)="closeError()"
+    >
+      <span body>
+        {{ errorMessage }}
+      </span>
+    </app-error-modal>
+  
+    <app-success-modal
+      *ngIf="showSuccess"
+      (closeSuccess)="closeSuccess()"
+    >
+      <span body>
+        {{ successMessage }}
+      </span>
+    </app-success-modal>
+  </div>
+</div>

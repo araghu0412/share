@@ -1,0 +1,62 @@
+<div class="mm-refresh-token">
+  <div class="mm-refresh-token-modal">
+    <div class="mm-refresh-token-modal-backdrop">
+      <div class="mm-refresh-token-modal-dialog">
+        <div class="mm-refresh-token-modal-content">
+          <div class="mm-refresh-token-modal-header">
+            <h3 class="mm-refresh-token-modal-title">Continue Session</h3>
+          </div>
+          <div
+            class="mm-refresh-token-modal-body"
+          >
+            <div class="mm-refresh-token-modal-body-content">
+              Your session is about to expire. Please enter PIN and click on Continue if you wish to continue the session.
+            </div>
+            <div class="mm-refresh-token-modal-body-content">
+              <div class="key">PIN</div>
+              <div class="value">
+                <input
+                  type="password"
+                  id="refresh-token-pin"
+                  placeholder="PIN"
+                  (focus)="inputOnFocus('refresh-token-pin')"
+                  [(ngModel)]="pin"
+                />
+                <app-input-field-error
+                  *ngIf="errorFlagPin"
+                  [errorMessage]="errorMessagePin"
+                ></app-input-field-error>
+              </div>
+            </div>
+          </div>
+          <div class="mm-refresh-token-modal-footer">
+            <div class="mm-refresh-token-close">
+              <span>
+                <app-money-manager-button
+                  [buttonTitle]="'Close'"
+                  [buttonClass]="'btn btn-danger'"
+                  (onButtonClick)="onCloseRefreshTokenClick()"
+                ></app-money-manager-button>
+              </span>
+              <div class="mm-refresh-token-continue">
+                <app-money-manager-button
+                  [buttonTitle]="'Continue'"
+                  [buttonClass]="'btn btn-primary'"
+                  (onButtonClick)="onContinueRefreshTokenClick()"
+                ></app-money-manager-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-error-modal
+    *ngIf="showErrorRefreshToken"
+    (closeError)="closeErrorRefreshToken()"
+  >
+    <span body>
+      {{ errorMessageRefreshToken }}
+    </span>
+  </app-error-modal>
+</div>

@@ -1,0 +1,43 @@
+<div class="bhaaratha-shares-short-term-investment">
+  <app-bhaaratha-shares-short-term-investment-header
+    [isRefreshButtonDisabled]="isRefreshButtonDisabled"
+    (onRefreshClick)="onRefreshClick()"
+    (onAddShortTermInvestmentClick)="onAddShortTermInvestmentClick()"
+  ></app-bhaaratha-shares-short-term-investment-header>
+  <app-bhaaratha-shares-short-term-investment-data
+    [loading]="loading"
+    [noRecords]="noRecords"
+    [shortTermInvestmentDataList]="shortTermInvestmentDataList"
+    [shortTermInvestmentTotal]="shortTermInvestmentTotal"
+    (onShortTermInvestmentScriptClick)="onShortTermInvestmentScriptClick($event)"
+    (onDeleteShortTermInvestmentClick)="onDeleteShortTermInvestmentClick($event)"
+  ></app-bhaaratha-shares-short-term-investment-data>
+
+  <app-confirmation-modal
+    *ngIf="showConfirmation"
+    (onCloseConfirmation)="onCloseConfirmation()"
+    (onConfirmationContinue)="onConfirmationContinue()"
+  >
+    <span body>
+      {{ confirmationMessage }}
+    </span>
+  </app-confirmation-modal>
+
+  <app-error-modal
+    *ngIf="showError"
+    (closeError)="closeError()"
+  >
+    <span body>
+      {{ errorMessage }}
+    </span>
+  </app-error-modal>
+
+  <app-success-modal
+    *ngIf="showSuccess"
+    (closeSuccess)="closeSuccess()"
+  >
+    <span body>
+      {{ successMessage }}
+    </span>
+  </app-success-modal>
+</div>

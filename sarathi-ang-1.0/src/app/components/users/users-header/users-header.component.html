@@ -1,0 +1,131 @@
+<div class="mm-users-header">
+  <div class="mm-users-header-container">
+    <div class="users-nav">
+      <div
+        (click)="onUsersHomeClick()"
+      >
+        <div
+          *ngIf="homeRouterActive; else elseHomeRouterActiveDesktop"
+          class="router active"
+        >
+          Home
+        </div>
+        <div>
+          <ng-template #elseHomeRouterActiveDesktop>
+            <div class="router">
+              Home
+            </div>
+          </ng-template>
+        </div>
+      </div>
+
+      <div
+        *ngFor="let countryDetails of countryDetailsMap | keyvalue: originalOrder"
+        (click)="onUsersServicesClick(countryDetails.value)"
+      >
+        <div
+          *ngIf="servicesRouterActiveMap.get(countryDetails.value.countryId); else elseServicesRouterActiveDesktop"
+          class="router active"
+        >
+          {{ countryDetails.value.countryCode }}
+          <span class="arrow">
+            <span *ngIf="showUserServicesMap.get(countryDetails.value.countryId)" class="arrow-up"></span>
+            <span *ngIf="!showUserServicesMap.get(countryDetails.value.countryId)" class="arrow-down"></span>
+          </span>
+        </div>
+        <div>
+          <ng-template #elseServicesRouterActiveDesktop>
+            <div class="router">
+              {{ countryDetails.value.countryCode }}
+              <span class="arrow">
+                <span *ngIf="showUserServicesMap.get(countryDetails.value.countryId)" class="arrow-up"></span>
+                <span *ngIf="!showUserServicesMap.get(countryDetails.value.countryId)" class="arrow-down"></span>
+              </span>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+
+      <div
+        class="user-nav-right"
+        [tabindex]="0"
+        (blur)="onUserDropdownInfoBlur()"
+      >
+        <div>
+          <span
+            class="user-dropdown"
+            (click)="onUserDropdownInfoClick()"
+          >
+            {{ userName }}
+            <span class="arrow">
+              <span *ngIf="showUserDropdownInfo" class="arrow-up"></span>
+              <span *ngIf="!showUserDropdownInfo" class="arrow-down"></span>
+            </span>
+          </span>
+        </div>
+        <div *ngIf="showUserDropdownInfo" class="user-services-dropdown-info">
+          <div
+            class="user-dropdown-router"
+            (click)="onUserProfileClick()"
+          >
+            Profile
+          </div>
+          <div
+            class="user-dropdown-router"
+            (click)="onUserLogoutClick()"
+          >
+            Logout
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      *ngFor="let showUserServices of showUserServicesMap | keyvalue: originalOrder" :key="key"
+      class="user-services-nav"
+    >
+      <div *ngIf="showUserServices.value">
+        <div
+          *ngIf="showUserServicesMap.get(showUserServices.key)"
+        >
+          <div
+            (click)="onServiceSelectClick(countryDetailsMap.get(showUserServices.key).countryId, 'home')"
+            class="router"
+          >
+            Home
+          </div>
+          <div
+            *ngFor="let userOptedServiceIdByCountry of userOptedServiceIdsByCountryMap.get(showUserServices.key).userOptedServiceIdsList"
+            (click)="onServiceSelectClick(countryDetailsMap.get(showUserServices.key).countryId, servicesOfferedDetailsMap.get(userOptedServiceIdByCountry).serviceCode)"
+          >
+            <div
+              class="router"
+            >
+              {{ servicesOfferedDetailsMap.get(userOptedServiceIdByCountry).serviceName }}
+              <span class="arrow">
+                <span *ngIf="showUserSubServicesMap.get(servicesOfferedDetailsMap.get(userOptedServiceIdByCountry).serviceCode)" class="arrow-up"></span>
+                <span *ngIf="!showUserSubServicesMap.get(servicesOfferedDetailsMap.get(userOptedServiceIdByCountry).serviceCode)" class="arrow-down"></span>
+            </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      *ngIf="showUserSubServices"
+      class="user-services-nav"
+    >
+      <div
+        *ngFor="let userSubServices of userSubServicesObject.userSubServicesList"
+      >
+        <div
+          (click)="onSubServiceSelectClick(userSubServicesObject.countryId, userSubServicesObject.countryCode, userSubServicesObject.serviceCode, userSubServices.subServiceName)"
+          class="router"
+        >
+          {{ userSubServices.subServiceName }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

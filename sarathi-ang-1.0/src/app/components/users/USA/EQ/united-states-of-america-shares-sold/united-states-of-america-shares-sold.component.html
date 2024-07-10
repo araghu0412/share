@@ -1,0 +1,31 @@
+<div class="united-states-of-america-shares-sold">
+  <app-united-states-of-america-shares-bought-sold-header
+    [type]="type"
+    [isSearchFieldDisabled]="isSearchFieldDisabled"
+    [isSearchButtonDisabled]="isSearchButtonDisabled"
+    [isRefreshButtonDisabled]="isRefreshButtonDisabled"
+    [isHeaderDropdownDisabled]="isHeaderDropdownDisabled"
+    [headerDropdownList]="headerDropdownList"
+    [headerDropdownPlaceholder]="headerDropdownPlaceholder"
+    (onSearchClick)="onSearchClick($event)"
+    (onRefreshClick)="onRefreshClick($event)"
+    (onConsolidatedSelect)="onConsolidatedSelect($event)"
+    (onNonConsolidatedSelect)="onNonConsolidatedSelect($event)"
+  ></app-united-states-of-america-shares-bought-sold-header>
+  <app-united-states-of-america-shares-bought-and-sold-data
+    [type]="'sold'"
+    [loading]="loading"
+    [noRecords]="noRecords"
+    [unitedStatesOfAmericaSharesList]="unitedStatesOfAmericaSharesList"
+    [unitedStatesOfAmericaSharesTotal]="unitedStatesOfAmericaSharesTotal"
+  ></app-united-states-of-america-shares-bought-and-sold-data>
+
+  <app-error-modal
+    *ngIf="showError"
+    (closeError)="closeError()"
+  >
+    <span body>
+      {{ errorMessage }}
+    </span>
+  </app-error-modal>
+</div>

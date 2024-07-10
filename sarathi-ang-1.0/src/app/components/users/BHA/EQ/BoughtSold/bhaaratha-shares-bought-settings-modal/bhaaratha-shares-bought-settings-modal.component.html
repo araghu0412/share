@@ -1,0 +1,49 @@
+<div class="bhaaratha-shares-bought-settings-modal">
+  <div class="mm-bhaaratha-shares-bought-settings">
+    <div class="services-bought-settings-modal">
+      <div class="services-bought-settings-modal-backdrop">
+        <div class="services-bought-settings-modal-dialog">
+          <div class="services-bought-settings-modal-content">
+            <div class="services-bought-settings-modal-header">
+              <h3 class="services-bought-settings-modal-title">Settings</h3>
+            </div>
+            <div
+              class="services-bought-settings-modal-body"
+            >
+              <div class="services-bought-settings-modal-body-content">
+                <div class="key">Long Term Only</div>
+                <div class="value">
+                  <app-money-manager-radio
+                    [resetRadio]="false"
+                    [radioList]="longTermRadioList"
+                    [radioDefault]="longTermRadioDefault"
+                    [radioName]="'bhaarathaSharesBoughtSettingsLongTermRadio'"
+                    (onRadioSelect)="onLongTermRadioSelect($event)"
+                  ></app-money-manager-radio>
+                </div>
+              </div>
+            </div>
+            <div class="services-bought-settings-modal-footer">
+              <div class="services-bought-settings-close">
+                <span>
+                  <app-money-manager-button
+                    [buttonTitle]="'Close'"
+                    [buttonClass]="'btn btn-danger'"
+                    (onButtonClick)="onCloseSettingsClick()"
+                  ></app-money-manager-button>
+                </span>
+                <div class="services-bought-settings-continue">
+                  <app-money-manager-button
+                    [buttonTitle]="'Confirm'"
+                    [buttonClass]="'btn btn-primary'"
+                    (onButtonClick)="onConfirmSettingsClick()"
+                  ></app-money-manager-button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

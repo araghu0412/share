@@ -1,0 +1,67 @@
+<div class="bhaaratha-shares-bought-and-sold-data">
+  <div class="services-bought-sold-data">
+    <div class="spinner" *ngIf="loading">
+      <app-money-manager-loading></app-money-manager-loading>
+    </div>
+    <div *ngIf="noRecords" class="no-records">
+      ******* NO RECORDS *******
+    </div>
+    <div *ngIf="!loading && !noRecords">
+      <div class="services-bought-sold-table">
+        <div class="mm-table">
+          <table class="mm-table-data">
+            <thead>
+              <tr>
+                <th>SCRIPT NAME</th>
+                <th>PURCHASE PRICE</th>
+                <th>PURCHASE TOTAL</th>
+                <th>PURCHASE NET</th>
+                <th>SELL PRICE</th>
+                <th>SELL TOTAL</th>
+                <th>SELL NET</th>
+                <th>P/L</th>
+                <th>P/L (%)</th>
+                <th>NET P/L</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let bhaarathaShares of bhaarathaSharesList" :key="bhaarathaShares.id">
+                <td>
+                  <span class="link" (click)="onBhaarathaSharesScriptClick($event, bhaarathaShares.bseScriptCode, bhaarathaShares.nseScriptCode, bhaarathaShares.moneycontrolCode, bhaarathaShares.yahooBseScriptCode, bhaarathaShares.yahooNseScriptCode)">
+                    {{ bhaarathaShares.scriptName }}
+                  </span>
+                </td>
+                <td>{{ bhaarathaShares.purchasePrice }}</td>
+                <td>{{ bhaarathaShares.purchaseTotal }}</td>
+                <td>{{ bhaarathaShares.purchaseNetPricePerUnit }}</td>
+                <td>{{ bhaarathaShares.sellPrice }}</td>
+                <td>{{ bhaarathaShares.sellTotal }}</td>
+                <td>{{ bhaarathaShares.sellNetPricePerUnit }}</td>
+                <td appHighlightByNumbers [value]="bhaarathaShares.totalProfitLoss">{{ bhaarathaShares.totalProfitLoss }}</td>
+                <td appHighlightByNumbers [value]="bhaarathaShares.totalProfitLossPercentage">{{ bhaarathaShares.totalProfitLossPercentage }}%</td>
+                <td appHighlightByNumbers [value]="bhaarathaShares.netProfitLossPerUnit">{{ bhaarathaShares.netProfitLossPerUnit }}</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>TOTAL</td>
+                <td>{{ bhaarathaSharesTotal.purchasePrice }}</td>
+                <td>{{ bhaarathaSharesTotal.purchaseTotal }}</td>
+                <td>{{ bhaarathaSharesTotal.purchaseNetPricePerUnit }}</td>
+                <td>{{ bhaarathaSharesTotal.sellPrice }}</td>
+                <td>{{ bhaarathaSharesTotal.sellTotal }}</td>
+                <td>{{ bhaarathaSharesTotal.sellNetPricePerUnit }}</td>
+                <td appHighlightByNumbers [value]="bhaarathaSharesTotal.totalProfitLoss">{{ bhaarathaSharesTotal.totalProfitLoss }}</td>
+                <td appHighlightByNumbers [value]="bhaarathaSharesTotal.totalProfitLossPercentage">{{ bhaarathaSharesTotal.totalProfitLossPercentage }}%</td>
+                <td appHighlightByNumbers [value]="bhaarathaSharesTotal.netProfitLossPerUnit">{{ bhaarathaSharesTotal.netProfitLossPerUnit }}</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <div class="services-bought-sold-content">
+          Your portfolio has provided a total return of <span appHighlightByNumbers [value]="bhaarathaSharesTotal.totalProfitLoss" [fontWeight]="'bold'">{{ bhaarathaSharesTotal.totalProfitLoss }}</span> (<span appHighlightByNumbers [value]="bhaarathaSharesTotal.totalProfitLossPercentage" [fontWeight]="'bold'">{{ bhaarathaSharesTotal.totalProfitLossPercentage }}%</span>) and per unit net return of <span appHighlightByNumbers [value]="bhaarathaSharesTotal.netProfitLossPerUnit" [fontWeight]="'bold'">{{ bhaarathaSharesTotal.netProfitLossPerUnit }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

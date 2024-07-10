@@ -1,0 +1,64 @@
+<div class="bhaaratha-shares-sector-category-analysis-settings-modal">
+  <div class="mm-bhaaratha-shares-analysis-settings">
+    <div class="services-analysis-settings-modal">
+      <div class="services-analysis-settings-modal-backdrop">
+        <div class="services-analysis-settings-modal-dialog">
+          <div class="services-analysis-settings-modal-content">
+            <div class="services-analysis-settings-modal-header">
+              <h3 class="services-analysis-settings-modal-title">Settings</h3>
+            </div>
+            <div
+              class="services-analysis-settings-modal-body"
+            >
+              <div class="services-analysis-settings-modal-body-content">
+                <div class="services-analysis-settings-form">
+                  <div class="key">Long Term Only</div>
+                  <div class="value">
+                    <app-money-manager-radio
+                      [resetRadio]="false"
+                      [radioList]="longTermRadioList"
+                      [radioDefault]="longTermRadioDefault"
+                      [radioName]="'longTermOnlyRadio'"
+                      (onRadioSelect)="onLongTermRadioSelect($event)"
+                    ></app-money-manager-radio>
+                  </div>
+                </div>
+
+                <div class="services-analysis-settings-form">
+                  <div class="key">Value In %</div>
+                  <div class="value">
+                    <app-money-manager-radio
+                      [resetRadio]="false"
+                      [radioList]="valueInPercentageRadioList"
+                      [radioDefault]="valueInPercentageRadioDefault"
+                      [radioName]="'valueInPercentageRadio'"
+                      (onRadioSelect)="onValueInPercentageRadioSelect($event)"
+                    ></app-money-manager-radio>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="services-analysis-settings-modal-footer">
+              <div class="services-analysis-settings-close">
+                <span>
+                  <app-money-manager-button
+                    [buttonTitle]="'Close'"
+                    [buttonClass]="'btn btn-danger'"
+                    (onButtonClick)="onCloseSettingsClick()"
+                  ></app-money-manager-button>
+                </span>
+                <div class="services-analysis-settings-continue">
+                  <app-money-manager-button
+                    [buttonTitle]="'Confirm'"
+                    [buttonClass]="'btn btn-primary'"
+                    (onButtonClick)="onConfirmSettingsClick()"
+                  ></app-money-manager-button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

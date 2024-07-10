@@ -1,0 +1,227 @@
+<div class="mm-register-user">
+  <div
+    *ngIf="!registerUserReady && !registerUserError"
+    class="spinner"
+  >
+    <app-money-manager-loading></app-money-manager-loading>
+  </div>
+  <div
+    *ngIf="registerUserReady"
+    class="register-user-box"
+  >
+    <h3 class="register-user-heading">User Registration</h3>
+    <div class="register-user-form-container">
+      <div class="register-user-form">
+        <div class="key">First Name</div>
+        <div class="value">
+          <input
+            type="text"
+            id="register-user-first-name"
+            placeholder="First Name"
+            (focus)="inputOnFocus('register-user-first-name')"
+            [(ngModel)]="firstName"
+          />
+          <app-input-field-error
+            *ngIf="errorFlagFirstName"
+            [errorMessage]="errorMessageFirstName"
+          ></app-input-field-error>
+        </div>
+      </div>
+      <div class="register-user-form">
+        <div class="key">Middle Name</div>
+        <div class="value">
+          <input
+            type="text"
+            id="register-user-middle-name"
+            placeholder="Middle Name"
+            (focus)="inputOnFocus('register-user-middle-name')"
+            [(ngModel)]="middleName"
+          />
+          <app-input-field-error
+            *ngIf="errorFlagMiddleName"
+            [errorMessage]="errorMessageMiddleName"
+          ></app-input-field-error>
+        </div>
+      </div>
+      <div class="register-user-form">
+        <div class="key">Last Name</div>
+        <div class="value">
+          <input
+            type="text"
+            id="register-user-last-name"
+            placeholder="Last Name"
+            (focus)="inputOnFocus('register-user-last-name')"
+            [(ngModel)]="lastName"
+          />
+          <app-input-field-error
+            *ngIf="errorFlagLastName"
+            [errorMessage]="errorMessageLastName"
+          ></app-input-field-error>
+        </div>
+      </div>
+      <div class="register-user-form">
+        <div class="key">Preferred Name</div>
+        <div class="value">
+          <input
+            type="text"
+            id="register-user-preferred-name"
+            placeholder="Preferred Name"
+            (focus)="inputOnFocus('register-user-preferred-name')"
+            [(ngModel)]="preferredName"
+          />
+          <app-input-field-error
+            *ngIf="errorFlagPreferredName"
+            [errorMessage]="errorMessagePreferredName"
+          ></app-input-field-error>
+        </div>
+      </div>
+      <div class="register-user-form">
+        <div class="key">Gender</div>
+        <div class="value">
+          <app-money-manager-radio
+            [resetRadio]="resetGenderRadio"
+            [radioList]="genderRadioList"
+            [radioName]="'registerUserGenderRadio'"
+            (onRadioSelect)="onGenderSelect($event)"
+          ></app-money-manager-radio>
+          <div>
+            <app-input-field-error
+              *ngIf="errorFlagGender"
+              [errorMessage]="errorMessageGender"
+            ></app-input-field-error>
+          </div>
+        </div>
+      </div>
+      <div class="register-user-form">
+        <div class="key">E-Mail</div>
+        <div class="value">
+          <input
+            type="text"
+            id="register-user-email"
+            placeholder="E-Mail"
+            (focus)="inputOnFocus('register-user-email')"
+            (blur)="userAvailability()"
+            [(ngModel)]="email"
+          />
+          <app-input-field-error
+            *ngIf="errorFlagEmail"
+            [errorMessage]="errorMessageEmail"
+          ></app-input-field-error>
+        </div>
+      </div>
+      <div class="register-user-form">
+        <div class="key">Password</div>
+        <div class="value">
+          <input
+            type="password"
+            id="register-user-password"
+            placeholder="Password"
+            (focus)="inputOnFocus('register-user-password')"
+            [(ngModel)]="password"
+          />
+          <app-input-field-error
+            *ngIf="errorFlagPassword"
+            [errorMessage]="errorMessagePassword"
+          ></app-input-field-error>
+        </div>
+      </div>
+      <div class="register-user-form">
+        <div class="key">PIN</div>
+        <div class="value">
+          <input
+            type="password"
+            id="register-user-pin"
+            placeholder="PIN"
+            (focus)="inputOnFocus('register-user-pin')"
+            [(ngModel)]="pin"
+          />
+          <app-input-field-error
+            *ngIf="errorFlagPin"
+            [errorMessage]="errorMessagePin"
+          ></app-input-field-error>
+        </div>
+      </div>
+      <div class="register-user-form">
+        <div class="key">Country</div>
+        <div class="value">
+          <app-money-manager-check-box
+            [resetCheckBox]="resetCountriesCheckBox"
+            [checkBoxList]="countriesCheckBoxList"
+            [checkBoxName]="'registerUserCountry'"
+            (onCheckBoxSelect)="onCountryCheckBoxSelect($event)"
+          ></app-money-manager-check-box>
+          <div>
+            <app-input-field-error
+              *ngIf="errorFlagCountry"
+              [errorMessage]="errorMessageCountry"
+            ></app-input-field-error>
+          </div>
+        </div>
+      </div>
+      <div *ngFor="let servicesOfferedByCountry of servicesOfferedByCountryMap | keyvalue: originalOrder">
+        <div class="register-user-form">
+          <div class="key">Services ({{ servicesOfferedByCountry.value.countryCode }})</div>
+          <div class="value">
+            <app-money-manager-check-box
+              [resetCheckBox]="resetServicesOfferedCheckBox"
+              [checkBoxList]="servicesOfferedByCountry.value.servicesOfferedCheckBoxList"
+              [checkBoxName]="servicesOfferedByCountry.value.countryCode"
+              (onCheckBoxSelect)="onServiceCheckBoxSelect($event, servicesOfferedByCountry.value)"
+            ></app-money-manager-check-box>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="errorFlagService" class="register-user-form">
+        <div class="key"></div>
+        <div class="value">
+          <app-input-field-error
+            [errorMessage]="errorMessageService"
+          ></app-input-field-error>
+        </div>
+      </div>
+      <div class="register-user-form"></div>
+      <div class="register-user-clear-submit">
+        <span>
+          <app-money-manager-button
+            [buttonTitle]="'Clear'"
+            [buttonClass]="'btn-secondary'"
+            (onButtonClick)="onClear()"
+          ></app-money-manager-button>
+        </span>
+        <div class="register-user-submit">
+          <app-money-manager-button
+            [buttonTitle]="'Submit'"
+            [buttonClass]="'btn-primary'"
+            (onButtonClick)="onSubmit()"
+          ></app-money-manager-button>
+        </div>
+      </div>
+      <div class="register-user-form"></div>
+      <div class="register-user-form">
+        <label
+          >Already have an account?
+          <a class="link" routerLink = "/login">Login</a>
+          here</label
+        >
+      </div>
+    </div>
+  </div>
+
+  <app-error-modal
+    *ngIf="showErrorRegisterUserPreData"
+    (closeError)="closeErrorRegisterUserPreData()"
+  >
+    <span body>
+      {{ errorMessageRegisterUserPreData }}
+    </span>
+  </app-error-modal>
+
+  <app-success-modal
+    *ngIf="showSuccess"
+    (closeSuccess)="closeSuccess()"
+  >
+    <span body>
+      {{ successMessage }}
+    </span>
+  </app-success-modal>
+</div>

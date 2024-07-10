@@ -1,0 +1,28 @@
+<div class="bhaaratha-shares-investment-research-header">
+  <div class="services-investment-research-header">
+    <div class="header">
+      <span class="left-items">
+        <app-money-manager-button
+          [buttonClass]="'navigation-button btn-sm'"
+          (onButtonClick)="onBackButtonClick()"
+        >
+          <span title>
+            <i class="fas fa-long-arrow-alt-left"></i> Back
+          </span>
+        </app-money-manager-button>
+      </span>
+
+      <span class="left-items">
+        <app-money-manager-button
+          [buttonClass]="isRefreshButtonDisabled ? 'btn-sm' : 'btn-primary btn-sm'"
+          [buttonDisabled]="isRefreshButtonDisabled"
+          (onButtonClick)="onRefreshClick()"
+        >
+          <span title>
+            Refresh <i class="fa fa-refresh"></i>
+          </span>
+        </app-money-manager-button>
+      </span>
+    </div>
+  </div>
+</div>

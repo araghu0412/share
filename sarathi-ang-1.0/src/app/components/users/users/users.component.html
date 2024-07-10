@@ -1,0 +1,9 @@
+<div>
+  <app-users-header></app-users-header>
+  <app-refresh-token
+    *ngIf="showRefreshToken"
+    (onCloseRefreshToken)="onCloseRefreshToken()"
+    (onContinueRefreshToken)="onContinueRefreshToken()"
+  ></app-refresh-token>
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,21 @@
+<div class="mm-error-modal">
+  <div class="mm-error-modal-backdrop">
+    <div class="mm-error-modal-dialog">
+      <div class="mm-error-modal-content">
+        <div class="mm-error-modal-header">
+          <h3 class="mm-error-modal-title">Error!!</h3>
+          <span>
+            <app-money-manager-button
+              [buttonClass]="'btn-close'"
+              (onButtonClick)="closeError()"
+            >
+            </app-money-manager-button>
+          </span>
+        </div>
+        <div class="mm-error-modal-body">
+          <ng-content select="[body]"></ng-content>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="bhaaratha-shares-one-share-details">
+  <app-bhaaratha-shares-one-share-details-header
+    [type]="type"
+    [isRefreshButtonDisabled]="isRefreshButtonDisabled"
+    (onRefreshClick)="onRefreshClick()"
+  ></app-bhaaratha-shares-one-share-details-header>
+
+  <app-bhaaratha-shares-one-share-details-data
+    [loading]="loading"
+    [noRecords]="noRecords"
+    [pageRefreshed]="pageRefreshed"
+    [bhaarathaSharesList]="bhaarathaSharesList"
+    [bhaarathaSharesTotal]="bhaarathaSharesTotal"
+    [bseOneShareDetails]="bseOneShareDetails"
+    [nseOneShareDetails]="nseOneShareDetails"
+  ></app-bhaaratha-shares-one-share-details-data>
+
+  <app-error-modal
+    *ngIf="showError"
+    (closeError)="closeError()"
+  >
+    <span body>
+      <span [innerHtml]="errorMessage"></span>
+    </span>
+  </app-error-modal>
+</div>

@@ -1,0 +1,477 @@
+<div class="bhaaratha-shares-add-bought">
+  <div class="services-add-scripts-bought">
+    <app-bhaaratha-shares-add-shares-header
+      (onBackButtonClicked)="onBackButtonClicked()"
+    ></app-bhaaratha-shares-add-shares-header>
+    <div class="services-add-scipts-box">
+      <h3 class="services-add-scipts-heading">
+        Fill the details below
+      </h3>
+      <div class="services-add-scipts-form-container">
+        <div class="services-add-scipts-form">
+          <div class="key">Stock Exchange</div>
+          <div class="value">
+            <span
+              id="bought-bhaaratha-share-stock-exchange"
+              (change)="inputOnFocus('bought-bhaaratha-share-stock-exchange')"
+            >
+              <app-money-manager-radio
+                [resetRadio]="resetStockExchangeRadio"
+                [radioList]="stockExchangeRadioList"
+                [radioName]="'bhaarathaSharesAddBoughtStockExchangeRadio'"
+                (onRadioSelect)="onStockExchangeSelect($event)"
+              ></app-money-manager-radio>
+            </span>
+            <div>
+              <app-input-field-error
+                *ngIf="errorFlagStockExchange"
+                [errorMessage]="errorMessageStockExchange"
+              ></app-input-field-error>
+            </div>
+          </div>
+        </div>
+        <div class="services-add-scipts-form">
+          <div class="key">Split/Bonus</div>
+          <div class="value">
+            <app-money-manager-check-box
+              [resetCheckBox]="resetBonusSplitCheckBox"
+              [checkBoxList]="bonusSplitCheckBoxList"
+              [checkBoxName]="'splitBonusCheckBox'"
+              (onCheckBoxSelect)="onBonusSplitSelect($event)"
+            ></app-money-manager-check-box>
+          </div>
+        </div>
+        <div *ngIf="isBonusCheckBoxSelected">
+          <div class="services-add-scipts-form">
+            <div class="key">Bonus Ratio</div>
+            <div class="value">
+              <input
+                type="text"
+                id="bought-bhaaratha-share-bonus-ratio"
+                placeholder="Bonus Ratio"
+                (focus)="inputOnFocus('bought-bhaaratha-share-bonus-ratio')"
+                [(ngModel)]="bonusRatio"
+              />
+              <app-input-field-error
+                *ngIf="errorFlagBonusRatio"
+                [errorMessage]="errorMessageBonusRatio"
+              ></app-input-field-error>
+            </div>
+          </div>
+          <div class="services-add-scipts-form">
+            <div class="key">Bonus Date</div>
+            <div class="value">
+              <span id="bought-bhaaratha-share-bonus-date"></span>
+              <app-money-manager-date-picker
+                [resetDatePicker]="resetBonusDatePicker"
+                (onSelectedFullDate)="onBonusDateSelect($event)"
+              ></app-money-manager-date-picker>
+              <app-input-field-error
+                *ngIf="errorFlagBonusDate"
+                [errorMessage]="errorMessageBonusDate"
+              ></app-input-field-error>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="isSplitCheckBoxSelected">
+          <div class="services-add-scipts-form">
+            <div class="key">Split Ratio</div>
+            <div class="value">
+              <input
+                type="text"
+                id="bought-bhaaratha-share-split-ratio"
+                placeholder="Split Ratio"
+                (focus)="inputOnFocus('bought-bhaaratha-share-split-ratio')"
+                [(ngModel)]="splitRatio"
+              />
+              <app-input-field-error
+                *ngIf="errorFlagSplitRatio"
+                [errorMessage]="errorMessageSplitRatio"
+              ></app-input-field-error>
+            </div>
+          </div>
+          <div class="services-add-scipts-form">
+            <div class="key">Split Date</div>
+            <div class="value">
+              <span id="bought-bhaaratha-share-split-date"></span>
+              <app-money-manager-date-picker
+                [resetDatePicker]="resetSplitDatePicker"
+                (onSelectedFullDate)="onSplitDateSelect($event)"
+              ></app-money-manager-date-picker>
+              <app-input-field-error
+                *ngIf="errorFlagSplitDate"
+                [errorMessage]="errorMessageSplitDate"
+              ></app-input-field-error>
+            </div>
+          </div>
+        </div>
+        <div class="services-add-scipts-form">
+          <div class="key">BSE Script Code</div>
+          <div class="value">
+            <input
+              type="text"
+              id="bought-bhaaratha-share-bse-script-code"
+              placeholder="BSE Script Code"
+              (focus)="inputOnFocus('bought-bhaaratha-share-bse-script-code')"
+              [(ngModel)]="bseScriptCode"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagBseScriptCode"
+              [errorMessage]="errorMessageBseScriptCode"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div
+          *ngIf="!isBonusCheckBoxSelected && !isSplitCheckBoxSelected"
+          class="services-add-scipts-form"
+        >
+          <div class="key">Yahoo Code (BSE)</div>
+          <div class="value">
+            <input
+              type="text"
+              id="bought-bhaaratha-share-yahoo-bse-script-code"
+              placeholder="Yahoo BSE Script Code"
+              (focus)="inputOnFocus('bought-bhaaratha-share-yahoo-bse-script-code')"
+              [(ngModel)]="yahooBseScriptCode"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagYahooBseScriptCode"
+              [errorMessage]="errorMessageYahooBseScriptCode"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="services-add-scipts-form">
+          <div class="key">NSE Script Code</div>
+          <div class="value">
+            <input
+              type="text"
+              id="bought-bhaaratha-share-nse-script-code"
+              placeholder="NSE Script Code"
+              (focus)="inputOnFocus('bought-bhaaratha-share-nse-script-code')"
+              [(ngModel)]="nseScriptCode"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagNseScriptCode"
+              [errorMessage]="errorMessageNseScriptCode"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div
+          *ngIf="!isBonusCheckBoxSelected && !isSplitCheckBoxSelected"
+          class="services-add-scipts-form"
+        >
+          <div class="key">Yahoo Code (NSE)</div>
+          <div class="value">
+            <input
+              type="text"
+              id="bought-bhaaratha-share-yahoo-nse-script-code"
+              placeholder="Yahoo NSE Script Code"
+              (focus)="inputOnFocus('bought-bhaaratha-share-yahoo-nse-script-code')"
+              [(ngModel)]="yahooNseScriptCode"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagYahooNseScriptCode"
+              [errorMessage]="errorMessageYahooNseScriptCode"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div
+          *ngIf="!isBonusCheckBoxSelected && !isSplitCheckBoxSelected"
+          class="services-add-scipts-form"
+        >
+          <div class="key">ISIN Code</div>
+          <div class="value">
+            <input
+              type="text"
+              id="bought-bhaaratha-share-isin-code"
+              placeholder="ISIN Code"
+              (focus)="inputOnFocus('bought-bhaaratha-share-isin-code')"
+              [(ngModel)]="isinCode"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagIsinCode"
+              [errorMessage]="errorMessageIsinCode"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="services-add-scipts-form">
+          <div class="key">Moneycontrol Code</div>
+          <div class="value">
+            <input
+              type="text"
+              id="bought-bhaaratha-share-money-control-code"
+              placeholder="Moneycontrol Code"
+              (focus)="inputOnFocus('bought-bhaaratha-share-money-control-code')"
+              [(ngModel)]="moneycontrolCode"
+              (change)="getShareNameByScriptCode()"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagMoneycontrolCode"
+              [errorMessage]="errorMessageMoneycontrolCode"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="services-add-scipts-form">
+          <div class="key">Share Name</div>
+          <div class="value">
+            <div id="bought-bhaaratha-share-script-name" class="services-add-scipts-script-name">
+              <label *ngIf="shareNameLoading;else nseShareNameTemplate">
+                <app-money-manager-loading></app-money-manager-loading>
+              </label>
+              <ng-template #nseShareNameTemplate>
+                <label>
+                  {{ shareName }}
+                </label>
+              </ng-template>
+            </div>
+            <app-input-field-error
+              *ngIf="errorFlagShareName"
+              [errorMessage]="errorMessageShareName"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div
+          *ngIf="!isBonusCheckBoxSelected && !isSplitCheckBoxSelected"
+          class="services-add-scipts-form"
+        >
+          <div class="key">Category</div>
+          <span id="bought-bhaaratha-share-category"></span>
+          <div class="value">
+            <app-money-manager-dropdown
+              [resetDropdown]="resetCategoryDropdown"
+              [dropdownList]="categoryList"
+              (onDropdownSelect)="onCategorySelect($event)"
+            ></app-money-manager-dropdown>
+            <div>
+              <app-input-field-error
+                *ngIf="errorFlagCategory"
+                [errorMessage]="errorMessageCategory"
+              ></app-input-field-error>
+            </div>
+          </div>
+        </div>
+        <div
+          *ngIf="!isBonusCheckBoxSelected && !isSplitCheckBoxSelected"
+          class="services-add-scipts-form"
+        >
+          <div class="key">Sector</div>
+          <div class="value">
+            <input
+              type="text"
+              id="bought-bhaaratha-share-sector"
+              placeholder="Sector"
+              (focus)="inputOnFocus('bought-bhaaratha-share-sector')"
+              [(ngModel)]="sector"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagSector"
+              [errorMessage]="errorMessageSector"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div
+          *ngIf="!isBonusCheckBoxSelected && !isSplitCheckBoxSelected"
+          class="services-add-scipts-form"
+        >
+          <div class="key">Industry</div>
+          <div class="value">
+            <input
+              type="text"
+              id="bought-bhaaratha-share-industry"
+              placeholder="Industry"
+              (focus)="inputOnFocus('bought-bhaaratha-share-industry')"
+              [(ngModel)]="industry"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagIndustry"
+              [errorMessage]="errorMessageIndustry"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div
+          *ngIf="!isBonusCheckBoxSelected && !isSplitCheckBoxSelected"
+          class="services-add-scipts-form"
+        >
+          <div class="key">Short Term Investment</div>
+          <div class="value">
+            <span>
+              <app-money-manager-radio
+                [resetRadio]="shortTermInvestmentResetRadio"
+                [radioList]="shortTermInvestmentRadioList"
+                [radioDefault]="shortTermInvestmentDefaultRadio"
+                [radioName]="'bhaarathaSharesAddBoughtShortTermInvestmentRadio'"
+                (onRadioSelect)="onShortTermInvestmentSelect($event)"
+              ></app-money-manager-radio>
+            </span>
+          </div>
+        </div>
+        <div
+          *ngIf="!isBonusCheckBoxSelected && !isSplitCheckBoxSelected"
+          class="services-add-scipts-form"
+        >
+          <div class="key">Purchase Date</div>
+          <div class="value">
+            <span id="bought-bhaaratha-share-purchase-date"></span>
+            <app-money-manager-date-picker
+              [resetDatePicker]="resetPurchaseDatePicker"
+              (onSelectedFullDate)="onPurchaseDateSelect($event)"
+            ></app-money-manager-date-picker>
+            <app-input-field-error
+              *ngIf="errorFlagPurchaseDate"
+              [errorMessage]="errorMessagePurchaseDate"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div
+          *ngIf="!isBonusCheckBoxSelected && !isSplitCheckBoxSelected"
+          class="services-add-scipts-form"
+        >
+          <div class="key">Purchase Quantity</div>
+          <div class="value">
+            <input
+              type="text"
+              id="bought-bhaaratha-share-purchase-quantity"
+              placeholder="Purchase Quantity"
+              (focus)="inputOnFocus('bought-bhaaratha-share-purchase-quantity')"
+              [(ngModel)]="purchaseQuantity"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagPurchaseQuantity"
+              [errorMessage]="errorMessagePurchaseQuantity"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div
+          *ngIf="!isBonusCheckBoxSelected && !isSplitCheckBoxSelected"
+          class="services-add-scipts-form"
+        >
+          <div class="key">Purchase Price</div>
+          <div class="value">
+            <input
+              type="text"
+              id="bought-bhaaratha-share-purchase-price"
+              placeholder="Purchase Price"
+              (focus)="inputOnFocus('bought-bhaaratha-share-purchase-price')"
+              [(ngModel)]="purchasePrice"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagPurchasePrice"
+              [errorMessage]="errorMessagePurchasePrice"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div
+          *ngIf="!isBonusCheckBoxSelected && !isSplitCheckBoxSelected"
+          class="services-add-scipts-form"
+        >
+          <div class="key">Purchase Brokerage</div>
+          <div class="value">
+            <input
+              type="text"
+              id="bought-bhaaratha-share-purchase-brokerage"
+              placeholder="Purchase Brokerage"
+              (focus)="inputOnFocus('bought-bhaaratha-share-purchase-brokerage')"
+              [(ngModel)]="purchaseBrokerage"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagPurchaseBrokerage"
+              [errorMessage]="errorMessagePurchaseBrokerage"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div
+          *ngIf="!isBonusCheckBoxSelected && !isSplitCheckBoxSelected"
+          class="services-add-scipts-form"
+        >
+          <div class="key">Purchase STT</div>
+          <div class="value">
+            <input
+              type="text"
+              id="bought-bhaaratha-share-purchase-stt"
+              placeholder="Purchase STT"
+              (focus)="inputOnFocus('bought-bhaaratha-share-purchase-stt')"
+              [(ngModel)]="purchaseSTT"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagPurchaseSTT"
+              [errorMessage]="errorMessagePurchaseSTT"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div
+          *ngIf="!isBonusCheckBoxSelected && !isSplitCheckBoxSelected"
+          class="services-add-scipts-form"
+        >
+          <div class="key">Purchase Expenditure</div>
+          <div class="value">
+            <input
+              type="text"
+              id="bought-bhaaratha-share-purchase-expenditure"
+              placeholder="Purchase Expenditure"
+              (focus)="inputOnFocus('bought-bhaaratha-share-purchase-expenditure')"
+              [(ngModel)]="purchaseExpenditure"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagPurchaseExpenditure"
+              [errorMessage]="errorMessagePurchaseExpenditure"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div
+          *ngIf="!isBonusCheckBoxSelected && !isSplitCheckBoxSelected"
+          class="services-add-scipts-form"
+        >
+          <div class="key">Purchase Non Expenditure</div>
+          <div class="value">
+            <input
+              type="text"
+              id="bought-bhaaratha-share-purchase-non-expenditure"
+              placeholder="Purchase Non Expenditure"
+              (focus)="inputOnFocus('bought-bhaaratha-share-purchase-non-expenditure')"
+              [(ngModel)]="purchaseNonExpenditure"
+            />
+            <app-input-field-error
+              *ngIf="errorFlagPurchaseNonExpenditure"
+              [errorMessage]="errorMessagePurchaseNonExpenditure"
+            ></app-input-field-error>
+          </div>
+        </div>
+        <div class="services-add-scipts-form"></div>
+        <div class="services-add-scipts-clear">
+          <span>
+            <app-money-manager-button
+              [buttonTitle]="'Clear'"
+              [buttonClass]="'btn-secondary'"
+              (onButtonClick)="onBhaarathaSharesAddSharesClear()"
+            ></app-money-manager-button>
+          </span>
+          <div class="services-add-scipts-submit">
+            <app-money-manager-button
+              [buttonTitle]="'Submit'"
+              [buttonClass]="'btn-primary'"
+              (onButtonClick)="onBhaarathaSharesAddSharesSubmit()"
+            ></app-money-manager-button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <app-error-modal
+      *ngIf="showError"
+      (closeError)="closeError()"
+    >
+      <span body>
+        {{ errorMessage }}
+      </span>
+    </app-error-modal>
+  
+    <app-success-modal
+      *ngIf="showSuccess"
+      (closeSuccess)="closeSuccess()"
+    >
+      <span body>
+        {{ successMessage }}
+      </span>
+    </app-success-modal>
+  </div>
+</div>
