@@ -72,7 +72,7 @@ It also gave me hands-on experience with both Vue.js and Angular frontends tied 
 |--------------------------------------------------------------------------------------|---------------------------------------------|
 | [Backend](https://github.com/araghu0412/share/tree/main/anukya-sb-1.0)               | Spring Boot project with JSON storage logic |
 | [Frontend - VueJS](https://github.com/araghu0412/share/tree/main/sarathi-vue-1.0)    | Vue.js implementation of the frontend       |
-| [Frontend - Angular](https://github.com/araghu0412/share/tree/main/sarathi-ang-1.0>) | Angular implementation of the frontend      |
+| [Frontend - Angular](https://github.com/araghu0412/share/tree/main/sarathi-ang-1.0) | Angular implementation of the frontend      |
 
 ---
 
