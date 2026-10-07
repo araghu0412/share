@@ -1,0 +1,601 @@
+[ {
+  "userStoryNumber" : "US20001",
+  "featureNumber" : "F10001",
+  "userStoryName" : "Search flights by route and travel dates",
+  "userStoryDescription" : "As a traveler, I want to search flights using origin, destination, departure date, return date, and passenger count so that I can see eligible itineraries.",
+  "startDate" : "04-Jan-2026",
+  "endDate" : "11-Jan-2026",
+  "storyPoints" : 5,
+  "release" : "2026.01",
+  "userStoryProgress" : "Completed"
+}, {
+  "userStoryNumber" : "US20002",
+  "featureNumber" : "F10001",
+  "userStoryName" : "Filter and sort available itineraries",
+  "userStoryDescription" : "As a traveler, I want to filter by nonstop flights, cabin, departure time, and sort by price or duration so that I can narrow flight options.",
+  "startDate" : "08-Jan-2026",
+  "endDate" : "16-Jan-2026",
+  "storyPoints" : 8,
+  "release" : "2026.01",
+  "userStoryProgress" : "Verified"
+}, {
+  "userStoryNumber" : "US20003",
+  "featureNumber" : "F10001",
+  "userStoryName" : "Display fare family details",
+  "userStoryDescription" : "As a traveler, I want each itinerary to show fare family benefits and restrictions so that I can compare baggage, change, and refund conditions.",
+  "startDate" : "12-Jan-2026",
+  "endDate" : "21-Jan-2026",
+  "storyPoints" : 3,
+  "release" : "2026.01",
+  "userStoryProgress" : "Verified"
+}, {
+  "userStoryNumber" : "US20004",
+  "featureNumber" : "F10002",
+  "userStoryName" : "Create and update traveler profile",
+  "userStoryDescription" : "As a customer, I want to save traveler identity and contact details so that I do not need to re-enter them for every booking.",
+  "startDate" : "06-Jan-2026",
+  "endDate" : "13-Jan-2026",
+  "storyPoints" : 8,
+  "release" : "2026.01",
+  "userStoryProgress" : "Completed"
+}, {
+  "userStoryNumber" : "US20005",
+  "featureNumber" : "F10002",
+  "userStoryName" : "Store travel document information",
+  "userStoryDescription" : "As an international traveler, I want to securely maintain passport and travel-document details so that booking and check-in can validate required information.",
+  "startDate" : "10-Jan-2026",
+  "endDate" : "18-Jan-2026",
+  "storyPoints" : 3,
+  "release" : "2026.01",
+  "userStoryProgress" : "Verified"
+}, {
+  "userStoryNumber" : "US20006",
+  "featureNumber" : "F10002",
+  "userStoryName" : "Maintain special assistance preferences",
+  "userStoryDescription" : "As a traveler, I want to save wheelchair and assistance preferences so that eligible requests can be reused on future trips.",
+  "startDate" : "14-Jan-2026",
+  "endDate" : "23-Jan-2026",
+  "storyPoints" : 5,
+  "release" : "2026.01",
+  "userStoryProgress" : "Verified"
+}, {
+  "userStoryNumber" : "US20007",
+  "featureNumber" : "F10003",
+  "userStoryName" : "Authorize card payment during checkout",
+  "userStoryDescription" : "As a customer, I want my card payment authorized securely so that a valid booking can be created after successful payment.",
+  "startDate" : "08-Feb-2026",
+  "endDate" : "15-Feb-2026",
+  "storyPoints" : 3,
+  "release" : "2026.02",
+  "userStoryProgress" : "Completed"
+}, {
+  "userStoryNumber" : "US20008",
+  "featureNumber" : "F10003",
+  "userStoryName" : "Retry recoverable payment failures",
+  "userStoryDescription" : "As a customer, I want recoverable payment failures to be retried safely without duplicate charges so that checkout can complete reliably.",
+  "startDate" : "12-Feb-2026",
+  "endDate" : "20-Feb-2026",
+  "storyPoints" : 5,
+  "release" : "2026.02",
+  "userStoryProgress" : "Verified"
+}, {
+  "userStoryNumber" : "US20009",
+  "featureNumber" : "F10003",
+  "userStoryName" : "Generate booking confirmation and receipt",
+  "userStoryDescription" : "As a customer, I want a confirmation number and payment receipt after booking so that I have proof of purchase and itinerary details.",
+  "startDate" : "16-Feb-2026",
+  "endDate" : "25-Feb-2026",
+  "storyPoints" : 8,
+  "release" : "2026.02",
+  "userStoryProgress" : "Verified"
+}, {
+  "userStoryNumber" : "US20010",
+  "featureNumber" : "F10004",
+  "userStoryName" : "Display interactive aircraft seat map",
+  "userStoryDescription" : "As a traveler, I want to see available and occupied seats on the aircraft so that I can select an eligible seat.",
+  "startDate" : "02-Feb-2026",
+  "endDate" : "09-Feb-2026",
+  "storyPoints" : 5,
+  "release" : "2026.02",
+  "userStoryProgress" : "Completed"
+}, {
+  "userStoryNumber" : "US20011",
+  "featureNumber" : "F10004",
+  "userStoryName" : "Purchase preferred and extra-legroom seats",
+  "userStoryDescription" : "As a traveler, I want to purchase premium seat options with transparent pricing so that I can choose additional comfort.",
+  "startDate" : "06-Feb-2026",
+  "endDate" : "14-Feb-2026",
+  "storyPoints" : 8,
+  "release" : "2026.02",
+  "userStoryProgress" : "Verified"
+}, {
+  "userStoryNumber" : "US20012",
+  "featureNumber" : "F10004",
+  "userStoryName" : "Offer eligible cabin upgrades",
+  "userStoryDescription" : "As a traveler, I want to view available cabin upgrade offers so that I can upgrade my trip when inventory permits.",
+  "startDate" : "10-Feb-2026",
+  "endDate" : "19-Feb-2026",
+  "storyPoints" : 3,
+  "release" : "2026.02",
+  "userStoryProgress" : "Verified"
+}, {
+  "userStoryNumber" : "US20013",
+  "featureNumber" : "F10005",
+  "userStoryName" : "Validate online check-in eligibility",
+  "userStoryDescription" : "As a passenger, I want the system to determine whether I am eligible for online check-in so that restricted itineraries are handled correctly.",
+  "startDate" : "04-Mar-2026",
+  "endDate" : "11-Mar-2026",
+  "storyPoints" : 8,
+  "release" : "2026.03",
+  "userStoryProgress" : "Completed"
+}, {
+  "userStoryNumber" : "US20014",
+  "featureNumber" : "F10005",
+  "userStoryName" : "Complete passenger check-in",
+  "userStoryDescription" : "As a passenger, I want to confirm my details and check in for eligible flight segments so that I am marked ready for travel.",
+  "startDate" : "08-Mar-2026",
+  "endDate" : "16-Mar-2026",
+  "storyPoints" : 3,
+  "release" : "2026.03",
+  "userStoryProgress" : "Verified"
+}, {
+  "userStoryNumber" : "US20015",
+  "featureNumber" : "F10005",
+  "userStoryName" : "Generate digital boarding pass",
+  "userStoryDescription" : "As a checked-in passenger, I want a digital boarding pass with flight, seat, boarding group, and barcode information so that I can board the aircraft.",
+  "startDate" : "12-Mar-2026",
+  "endDate" : "21-Mar-2026",
+  "storyPoints" : 5,
+  "release" : "2026.03",
+  "userStoryProgress" : "Verified"
+}, {
+  "userStoryNumber" : "US20016",
+  "featureNumber" : "F10006",
+  "userStoryName" : "Purchase prepaid checked baggage",
+  "userStoryDescription" : "As a traveler, I want to add and pay for checked bags before departure so that I can prepare for airport bag drop.",
+  "startDate" : "06-Mar-2026",
+  "endDate" : "13-Mar-2026",
+  "storyPoints" : 3,
+  "release" : "2026.03",
+  "userStoryProgress" : "Completed"
+}, {
+  "userStoryNumber" : "US20017",
+  "featureNumber" : "F10006",
+  "userStoryName" : "Track baggage journey events",
+  "userStoryDescription" : "As a traveler, I want to see bag accepted, loaded, transferred, arrived, and carousel events so that I know the current status of my baggage.",
+  "startDate" : "10-Mar-2026",
+  "endDate" : "18-Mar-2026",
+  "storyPoints" : 5,
+  "release" : "2026.03",
+  "userStoryProgress" : "Verified"
+}, {
+  "userStoryNumber" : "US20018",
+  "featureNumber" : "F10006",
+  "userStoryName" : "Notify customers of baggage exceptions",
+  "userStoryDescription" : "As a traveler, I want notifications when my baggage is delayed or rerouted so that I can take appropriate action.",
+  "startDate" : "14-Mar-2026",
+  "endDate" : "23-Mar-2026",
+  "storyPoints" : 8,
+  "release" : "2026.03",
+  "userStoryProgress" : "Verified"
+}, {
+  "userStoryNumber" : "US20019",
+  "featureNumber" : "F10007",
+  "userStoryName" : "Display real-time flight status",
+  "userStoryDescription" : "As a traveler, I want current departure, arrival, gate, delay, and cancellation status so that I can plan my airport journey.",
+  "startDate" : "08-Apr-2026",
+  "endDate" : "15-Apr-2026",
+  "storyPoints" : 5,
+  "release" : "2026.04",
+  "userStoryProgress" : "Completed"
+}, {
+  "userStoryNumber" : "US20020",
+  "featureNumber" : "F10007",
+  "userStoryName" : "Send gate and schedule change notifications",
+  "userStoryDescription" : "As a traveler, I want push, email, or SMS alerts when my gate or schedule changes so that I do not miss important updates.",
+  "startDate" : "12-Apr-2026",
+  "endDate" : "20-Apr-2026",
+  "storyPoints" : 8,
+  "release" : "2026.04",
+  "userStoryProgress" : "In progress"
+}, {
+  "userStoryNumber" : "US20021",
+  "featureNumber" : "F10007",
+  "userStoryName" : "Manage notification preferences",
+  "userStoryDescription" : "As a customer, I want to choose notification channels and event types so that I receive only useful travel alerts.",
+  "startDate" : "16-Apr-2026",
+  "endDate" : "25-Apr-2026",
+  "storyPoints" : 3,
+  "release" : "2026.04",
+  "userStoryProgress" : "Defined"
+}, {
+  "userStoryNumber" : "US20022",
+  "featureNumber" : "F10008",
+  "userStoryName" : "Identify disrupted itineraries",
+  "userStoryDescription" : "As a traveler, I want the platform to detect cancellations, significant delays, and missed-connection risk so that recovery options can be offered.",
+  "startDate" : "02-Apr-2026",
+  "endDate" : "09-Apr-2026",
+  "storyPoints" : 8,
+  "release" : "2026.04",
+  "userStoryProgress" : "Completed"
+}, {
+  "userStoryNumber" : "US20023",
+  "featureNumber" : "F10008",
+  "userStoryName" : "Search alternate flights for disrupted customers",
+  "userStoryDescription" : "As a disrupted traveler, I want eligible alternate flights ranked by arrival time and connection quality so that I can recover my trip.",
+  "startDate" : "06-Apr-2026",
+  "endDate" : "14-Apr-2026",
+  "storyPoints" : 3,
+  "release" : "2026.04",
+  "userStoryProgress" : "In progress"
+}, {
+  "userStoryNumber" : "US20024",
+  "featureNumber" : "F10008",
+  "userStoryName" : "Confirm self-service rebooking",
+  "userStoryDescription" : "As a disrupted traveler, I want to confirm a replacement itinerary and receive updated travel documents so that I can continue my journey.",
+  "startDate" : "10-Apr-2026",
+  "endDate" : "19-Apr-2026",
+  "storyPoints" : 5,
+  "release" : "2026.04",
+  "userStoryProgress" : "Defined"
+}, {
+  "userStoryNumber" : "US20025",
+  "featureNumber" : "F10009",
+  "userStoryName" : "Calculate cancellation eligibility and refund amount",
+  "userStoryDescription" : "As a customer, I want cancellation rules and refundable amounts calculated from my fare so that I understand the financial impact before cancelling.",
+  "startDate" : "04-May-2026",
+  "endDate" : "11-May-2026",
+  "storyPoints" : 3,
+  "release" : "2026.05",
+  "userStoryProgress" : "Completed"
+}, {
+  "userStoryNumber" : "US20026",
+  "featureNumber" : "F10009",
+  "userStoryName" : "Initiate refund to original payment method",
+  "userStoryDescription" : "As a customer, I want eligible refunds returned to the original payment method so that cancelled travel is financially settled.",
+  "startDate" : "08-May-2026",
+  "endDate" : "16-May-2026",
+  "storyPoints" : 5,
+  "release" : "2026.05",
+  "userStoryProgress" : "In progress"
+}, {
+  "userStoryNumber" : "US20027",
+  "featureNumber" : "F10009",
+  "userStoryName" : "Track refund status and notify customer",
+  "userStoryDescription" : "As a customer, I want to see refund progress and receive completion notifications so that I know when money has been returned.",
+  "startDate" : "12-May-2026",
+  "endDate" : "21-May-2026",
+  "storyPoints" : 8,
+  "release" : "2026.05",
+  "userStoryProgress" : "Defined"
+}, {
+  "userStoryNumber" : "US20028",
+  "featureNumber" : "F10010",
+  "userStoryName" : "Link loyalty account to customer profile",
+  "userStoryDescription" : "As a loyalty member, I want to link my account to my traveler profile so that eligible travel activity is associated with my membership.",
+  "startDate" : "06-May-2026",
+  "endDate" : "13-May-2026",
+  "storyPoints" : 5,
+  "release" : "2026.05",
+  "userStoryProgress" : "Completed"
+}, {
+  "userStoryNumber" : "US20029",
+  "featureNumber" : "F10010",
+  "userStoryName" : "Earn loyalty points from completed travel",
+  "userStoryDescription" : "As a loyalty member, I want eligible points credited after travel so that my balance reflects completed flights.",
+  "startDate" : "10-May-2026",
+  "endDate" : "18-May-2026",
+  "storyPoints" : 8,
+  "release" : "2026.05",
+  "userStoryProgress" : "In progress"
+}, {
+  "userStoryNumber" : "US20030",
+  "featureNumber" : "F10010",
+  "userStoryName" : "Redeem loyalty rewards during booking",
+  "userStoryDescription" : "As a loyalty member, I want to redeem available points for eligible bookings so that I can reduce the cash price of travel.",
+  "startDate" : "14-May-2026",
+  "endDate" : "23-May-2026",
+  "storyPoints" : 3,
+  "release" : "2026.05",
+  "userStoryProgress" : "Defined"
+}, {
+  "userStoryNumber" : "US20031",
+  "featureNumber" : "F10011",
+  "userStoryName" : "Create travel credit after eligible servicing event",
+  "userStoryDescription" : "As a customer, I want eligible unused value converted into a travel credit so that I can apply it to future travel.",
+  "startDate" : "08-Jun-2026",
+  "endDate" : "15-Jun-2026",
+  "storyPoints" : 8,
+  "release" : "2026.06",
+  "userStoryProgress" : "Completed"
+}, {
+  "userStoryNumber" : "US20032",
+  "featureNumber" : "F10011",
+  "userStoryName" : "Validate travel credit rules at checkout",
+  "userStoryDescription" : "As a customer, I want the platform to validate credit ownership, balance, expiration, and currency before applying it to a booking.",
+  "startDate" : "12-Jun-2026",
+  "endDate" : "20-Jun-2026",
+  "storyPoints" : 3,
+  "release" : "2026.06",
+  "userStoryProgress" : "In progress"
+}, {
+  "userStoryNumber" : "US20033",
+  "featureNumber" : "F10011",
+  "userStoryName" : "Prevent duplicate voucher redemption",
+  "userStoryDescription" : "As the airline, I want voucher usage to be idempotent so that a voucher cannot be redeemed more than allowed.",
+  "startDate" : "16-Jun-2026",
+  "endDate" : "25-Jun-2026",
+  "storyPoints" : 5,
+  "release" : "2026.06",
+  "userStoryProgress" : "Defined"
+}, {
+  "userStoryNumber" : "US20034",
+  "featureNumber" : "F10012",
+  "userStoryName" : "Request wheelchair assistance",
+  "userStoryDescription" : "As a traveler requiring mobility support, I want to request wheelchair assistance so that airport teams can prepare for my journey.",
+  "startDate" : "02-Jun-2026",
+  "endDate" : "09-Jun-2026",
+  "storyPoints" : 3,
+  "release" : "2026.06",
+  "userStoryProgress" : "Completed"
+}, {
+  "userStoryNumber" : "US20035",
+  "featureNumber" : "F10012",
+  "userStoryName" : "Add special meal request",
+  "userStoryDescription" : "As an eligible traveler, I want to request a special meal so that my dietary preference is recorded for the flight.",
+  "startDate" : "06-Jun-2026",
+  "endDate" : "14-Jun-2026",
+  "storyPoints" : 5,
+  "release" : "2026.06",
+  "userStoryProgress" : "In progress"
+}, {
+  "userStoryNumber" : "US20036",
+  "featureNumber" : "F10012",
+  "userStoryName" : "Purchase priority boarding and lounge access",
+  "userStoryDescription" : "As a traveler, I want to purchase eligible airport ancillaries so that I can improve my pre-flight experience.",
+  "startDate" : "10-Jun-2026",
+  "endDate" : "19-Jun-2026",
+  "storyPoints" : 8,
+  "release" : "2026.06",
+  "userStoryProgress" : "Defined"
+}, {
+  "userStoryNumber" : "US20037",
+  "featureNumber" : "F10013",
+  "userStoryName" : "Build multi-city itinerary",
+  "userStoryDescription" : "As a traveler, I want to search and book multiple flight legs across different cities so that complex trips can be purchased in one reservation.",
+  "startDate" : "04-Jul-2026",
+  "endDate" : "11-Jul-2026",
+  "storyPoints" : 5,
+  "release" : "2026.07",
+  "userStoryProgress" : "In progress"
+}, {
+  "userStoryNumber" : "US20038",
+  "featureNumber" : "F10013",
+  "userStoryName" : "Validate passport and international document data",
+  "userStoryDescription" : "As an international traveler, I want required document fields validated so that incomplete information is caught before travel.",
+  "startDate" : "08-Jul-2026",
+  "endDate" : "16-Jul-2026",
+  "storyPoints" : 8,
+  "release" : "2026.07",
+  "userStoryProgress" : "Defined"
+}, {
+  "userStoryNumber" : "US20039",
+  "featureNumber" : "F10013",
+  "userStoryName" : "Display international travel requirements",
+  "userStoryDescription" : "As a traveler, I want destination-specific document and travel requirement information so that I can prepare for an international trip.",
+  "startDate" : "12-Jul-2026",
+  "endDate" : "21-Jul-2026",
+  "storyPoints" : 3,
+  "release" : "2026.07",
+  "userStoryProgress" : "Backlog"
+}, {
+  "userStoryNumber" : "US20040",
+  "featureNumber" : "F10014",
+  "userStoryName" : "Retrieve booking using confirmation details",
+  "userStoryDescription" : "As a customer, I want to retrieve my reservation using confirmation and traveler details so that I can manage an existing trip.",
+  "startDate" : "06-Jul-2026",
+  "endDate" : "13-Jul-2026",
+  "storyPoints" : 8,
+  "release" : "2026.07",
+  "userStoryProgress" : "In progress"
+}, {
+  "userStoryNumber" : "US20041",
+  "featureNumber" : "F10014",
+  "userStoryName" : "Update booking contact information",
+  "userStoryDescription" : "As a customer, I want to update email and phone details on an eligible reservation so that operational notifications reach me.",
+  "startDate" : "10-Jul-2026",
+  "endDate" : "18-Jul-2026",
+  "storyPoints" : 3,
+  "release" : "2026.07",
+  "userStoryProgress" : "Defined"
+}, {
+  "userStoryNumber" : "US20042",
+  "featureNumber" : "F10014",
+  "userStoryName" : "Modify eligible itinerary segments",
+  "userStoryDescription" : "As a customer, I want to change eligible flights and see any fare difference so that I can service my trip without calling support.",
+  "startDate" : "14-Jul-2026",
+  "endDate" : "23-Jul-2026",
+  "storyPoints" : 5,
+  "release" : "2026.07",
+  "userStoryProgress" : "Backlog"
+}, {
+  "userStoryNumber" : "US20043",
+  "featureNumber" : "F10015",
+  "userStoryName" : "Consume gate change events",
+  "userStoryDescription" : "As a traveler, I want gate changes from airport operations reflected quickly so that my itinerary shows the correct departure gate.",
+  "startDate" : "08-Aug-2026",
+  "endDate" : "15-Aug-2026",
+  "storyPoints" : 3,
+  "release" : "2026.08",
+  "userStoryProgress" : "In progress"
+}, {
+  "userStoryNumber" : "US20044",
+  "featureNumber" : "F10015",
+  "userStoryName" : "Display boarding group and boarding status",
+  "userStoryDescription" : "As a passenger, I want boarding group and current boarding status displayed so that I know when to approach the gate.",
+  "startDate" : "12-Aug-2026",
+  "endDate" : "20-Aug-2026",
+  "storyPoints" : 5,
+  "release" : "2026.08",
+  "userStoryProgress" : "Defined"
+}, {
+  "userStoryNumber" : "US20045",
+  "featureNumber" : "F10015",
+  "userStoryName" : "Send final boarding call notification",
+  "userStoryDescription" : "As a passenger, I want a final-call alert when boarding is closing so that I have an opportunity to reach the gate.",
+  "startDate" : "16-Aug-2026",
+  "endDate" : "25-Aug-2026",
+  "storyPoints" : 8,
+  "release" : "2026.08",
+  "userStoryProgress" : "Backlog"
+}, {
+  "userStoryNumber" : "US20046",
+  "featureNumber" : "F10016",
+  "userStoryName" : "Search customer bookings for support",
+  "userStoryDescription" : "As a support agent, I want to find bookings using confirmation, customer, or flight information so that I can quickly locate a travel case.",
+  "startDate" : "02-Aug-2026",
+  "endDate" : "09-Aug-2026",
+  "storyPoints" : 5,
+  "release" : "2026.08",
+  "userStoryProgress" : "In progress"
+}, {
+  "userStoryNumber" : "US20047",
+  "featureNumber" : "F10016",
+  "userStoryName" : "View consolidated servicing context",
+  "userStoryDescription" : "As a support agent, I want payment, refund, disruption, and baggage history in one view so that I can understand the customer's issue.",
+  "startDate" : "06-Aug-2026",
+  "endDate" : "14-Aug-2026",
+  "storyPoints" : 8,
+  "release" : "2026.08",
+  "userStoryProgress" : "Defined"
+}, {
+  "userStoryNumber" : "US20048",
+  "featureNumber" : "F10016",
+  "userStoryName" : "Perform controlled booking servicing actions",
+  "userStoryDescription" : "As an authorized support agent, I want permitted rebooking and refund actions with audit history so that customer issues can be resolved safely.",
+  "startDate" : "10-Aug-2026",
+  "endDate" : "19-Aug-2026",
+  "storyPoints" : 3,
+  "release" : "2026.08",
+  "userStoryProgress" : "Backlog"
+}, {
+  "userStoryNumber" : "US20049",
+  "featureNumber" : "F10017",
+  "userStoryName" : "Recommend destinations from traveler preferences",
+  "userStoryDescription" : "As a customer, I want destination suggestions based on saved preferences so that I can discover relevant trips.",
+  "startDate" : "04-Sep-2026",
+  "endDate" : "11-Sep-2026",
+  "storyPoints" : 8,
+  "release" : "2026.09",
+  "userStoryProgress" : "Defined"
+}, {
+  "userStoryNumber" : "US20050",
+  "featureNumber" : "F10017",
+  "userStoryName" : "Recommend relevant ancillary services",
+  "userStoryDescription" : "As a traveler, I want relevant baggage, seat, and airport service recommendations so that useful options are easier to discover.",
+  "startDate" : "08-Sep-2026",
+  "endDate" : "16-Sep-2026",
+  "storyPoints" : 3,
+  "release" : "2026.09",
+  "userStoryProgress" : "Backlog"
+}, {
+  "userStoryNumber" : "US20051",
+  "featureNumber" : "F10017",
+  "userStoryName" : "Respect recommendation privacy preferences",
+  "userStoryDescription" : "As a customer, I want recommendation personalization to honor my privacy choices so that my preferences are respected.",
+  "startDate" : "12-Sep-2026",
+  "endDate" : "21-Sep-2026",
+  "storyPoints" : 5,
+  "release" : "2026.09",
+  "userStoryProgress" : "Backlog"
+}, {
+  "userStoryNumber" : "US20052",
+  "featureNumber" : "F10018",
+  "userStoryName" : "Create fare alert for route and dates",
+  "userStoryDescription" : "As a customer, I want to save a route, date range, and target price so that the platform can monitor fares for me.",
+  "startDate" : "06-Sep-2026",
+  "endDate" : "13-Sep-2026",
+  "storyPoints" : 3,
+  "release" : "2026.09",
+  "userStoryProgress" : "Defined"
+}, {
+  "userStoryNumber" : "US20053",
+  "featureNumber" : "F10018",
+  "userStoryName" : "Detect meaningful fare price changes",
+  "userStoryDescription" : "As a customer, I want the platform to identify significant price decreases so that I am alerted only when the change is useful.",
+  "startDate" : "10-Sep-2026",
+  "endDate" : "18-Sep-2026",
+  "storyPoints" : 5,
+  "release" : "2026.09",
+  "userStoryProgress" : "Backlog"
+}, {
+  "userStoryNumber" : "US20054",
+  "featureNumber" : "F10018",
+  "userStoryName" : "Send fare threshold notification",
+  "userStoryDescription" : "As a customer, I want a notification when a monitored fare reaches my configured threshold so that I can decide whether to book.",
+  "startDate" : "14-Sep-2026",
+  "endDate" : "23-Sep-2026",
+  "storyPoints" : 8,
+  "release" : "2026.09",
+  "userStoryProgress" : "Backlog"
+}, {
+  "userStoryNumber" : "US20055",
+  "featureNumber" : "F10019",
+  "userStoryName" : "Apply corporate travel policy during search",
+  "userStoryDescription" : "As a business traveler, I want preferred and out-of-policy options identified so that I can make policy-compliant booking choices.",
+  "startDate" : "08-Oct-2026",
+  "endDate" : "15-Oct-2026",
+  "storyPoints" : 5,
+  "release" : "2026.10",
+  "userStoryProgress" : "Defined"
+}, {
+  "userStoryNumber" : "US20056",
+  "featureNumber" : "F10019",
+  "userStoryName" : "Capture cost center and business purpose",
+  "userStoryDescription" : "As a business traveler, I want required accounting information stored with my booking so that expenses can be allocated correctly.",
+  "startDate" : "12-Oct-2026",
+  "endDate" : "20-Oct-2026",
+  "storyPoints" : 8,
+  "release" : "2026.10",
+  "userStoryProgress" : "Backlog"
+}, {
+  "userStoryNumber" : "US20057",
+  "featureNumber" : "F10019",
+  "userStoryName" : "Route out-of-policy booking for approval",
+  "userStoryDescription" : "As a manager, I want out-of-policy travel requests routed for approval so that exceptions are controlled.",
+  "startDate" : "16-Oct-2026",
+  "endDate" : "25-Oct-2026",
+  "storyPoints" : 3,
+  "release" : "2026.10",
+  "userStoryProgress" : "Backlog"
+}, {
+  "userStoryNumber" : "US20058",
+  "featureNumber" : "F10020",
+  "userStoryName" : "Trace booking transaction across services",
+  "userStoryDescription" : "As an operations engineer, I want a correlation identifier across search, payment, and booking services so that failures can be diagnosed end to end.",
+  "startDate" : "02-Oct-2026",
+  "endDate" : "09-Oct-2026",
+  "storyPoints" : 8,
+  "release" : "2026.10",
+  "userStoryProgress" : "Defined"
+}, {
+  "userStoryNumber" : "US20059",
+  "featureNumber" : "F10020",
+  "userStoryName" : "Monitor payment and booking reliability metrics",
+  "userStoryDescription" : "As an operations engineer, I want dashboards for payment authorization, booking creation, retries, and latency so that degradation is detected quickly.",
+  "startDate" : "06-Oct-2026",
+  "endDate" : "14-Oct-2026",
+  "storyPoints" : 3,
+  "release" : "2026.10",
+  "userStoryProgress" : "Backlog"
+}, {
+  "userStoryNumber" : "US20060",
+  "featureNumber" : "F10020",
+  "userStoryName" : "Alert on critical booking failures",
+  "userStoryDescription" : "As an operations engineer, I want actionable alerts for elevated booking and payment failures so that production incidents can be investigated promptly.",
+  "startDate" : "10-Oct-2026",
+  "endDate" : "19-Oct-2026",
+  "storyPoints" : 5,
+  "release" : "2026.10",
+  "userStoryProgress" : "Backlog"
+} ]

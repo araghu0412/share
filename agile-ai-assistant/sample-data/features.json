@@ -1,0 +1,202 @@
+[
+  {
+    "featureNumber": "F10001",
+    "epicNumber": "E1001",
+    "featureHeading": "Flight Search and Fare Discovery",
+    "featureDescription": "Build flight search across origin, destination, travel dates, passenger counts, cabin classes, nonstop preferences, and flexible dates. Return available itineraries with fare families, schedules, duration, and key restrictions.",
+    "startDate": "04-Jan-2026",
+    "endDate": "23-Jan-2026",
+    "featureSize": "M",
+    "release": "2026.01"
+  },
+  {
+    "featureNumber": "F10002",
+    "epicNumber": "E1001",
+    "featureHeading": "Passenger Profile and Traveler Management",
+    "featureDescription": "Allow customers to create and maintain traveler profiles with contact information, date of birth, travel documents, special assistance requests, and saved passenger details for faster booking.",
+    "startDate": "06-Jan-2026",
+    "endDate": "26-Jan-2026",
+    "featureSize": "M",
+    "release": "2026.01"
+  },
+  {
+    "featureNumber": "F10003",
+    "epicNumber": "E1002",
+    "featureHeading": "Secure Payment and Booking Confirmation",
+    "featureDescription": "Implement secure card payments, payment authorization, booking creation, payment retry handling, receipts, and booking confirmation. Prevent duplicate charges and maintain payment status throughout checkout.",
+    "startDate": "08-Feb-2026",
+    "endDate": "01-Mar-2026",
+    "featureSize": "L",
+    "release": "2026.02"
+  },
+  {
+    "featureNumber": "F10004",
+    "epicNumber": "E1002",
+    "featureHeading": "Seat Selection and Cabin Upgrade",
+    "featureDescription": "Provide interactive seat selection with seat maps, seat availability, paid seat pricing, preferred seats, extra-legroom options, and cabin upgrade offers during booking and post-booking servicing.",
+    "startDate": "02-Feb-2026",
+    "endDate": "24-Feb-2026",
+    "featureSize": "L",
+    "release": "2026.02"
+  },
+  {
+    "featureNumber": "F10005",
+    "epicNumber": "E1003",
+    "featureHeading": "Online Check-in and Digital Boarding Pass",
+    "featureDescription": "Enable eligible passengers to check in online, confirm passenger information, select or change seats, acknowledge travel requirements, and generate digital boarding passes with scannable barcodes.",
+    "startDate": "04-Mar-2026",
+    "endDate": "27-Mar-2026",
+    "featureSize": "L",
+    "release": "2026.03"
+  },
+  {
+    "featureNumber": "F10006",
+    "epicNumber": "E1003",
+    "featureHeading": "Baggage Purchase and Tracking",
+    "featureDescription": "Support prepaid baggage purchase, baggage allowance display, bag tag association, baggage status tracking, carousel information, and customer notifications when baggage status changes.",
+    "startDate": "06-Mar-2026",
+    "endDate": "30-Mar-2026",
+    "featureSize": "L",
+    "release": "2026.03"
+  },
+  {
+    "featureNumber": "F10007",
+    "epicNumber": "E1004",
+    "featureHeading": "Real-time Flight Status and Notifications",
+    "featureDescription": "Provide real-time flight status including departure, arrival, gate, delay, cancellation, and boarding updates. Send configurable push, email, and SMS notifications for important travel events.",
+    "startDate": "08-Apr-2026",
+    "endDate": "03-May-2026",
+    "featureSize": "M",
+    "release": "2026.04"
+  },
+  {
+    "featureNumber": "F10008",
+    "epicNumber": "E1004",
+    "featureHeading": "Flight Disruption and Self-service Rebooking",
+    "featureDescription": "Detect delays and cancellations that impact a customer's itinerary and provide eligible alternate flights. Support self-service rebooking, connection protection, and disruption-related customer notifications.",
+    "startDate": "02-Apr-2026",
+    "endDate": "28-Apr-2026",
+    "featureSize": "XL",
+    "release": "2026.04"
+  },
+  {
+    "featureNumber": "F10009",
+    "epicNumber": "E1005",
+    "featureHeading": "Cancellation and Automated Refund Processing",
+    "featureDescription": "Allow eligible bookings to be cancelled and calculate refundable amounts based on fare rules. Automate refund initiation, refund status tracking, payment reversal, and customer refund notifications.",
+    "startDate": "04-May-2026",
+    "endDate": "22-May-2026",
+    "featureSize": "L",
+    "release": "2026.05"
+  },
+  {
+    "featureNumber": "F10010",
+    "epicNumber": "E1005",
+    "featureHeading": "Loyalty Account and Reward Redemption",
+    "featureDescription": "Integrate loyalty accounts so customers can view balances, earn points from eligible travel, redeem rewards during booking, and review loyalty transaction history.",
+    "startDate": "06-May-2026",
+    "endDate": "25-May-2026",
+    "featureSize": "L",
+    "release": "2026.05"
+  },
+  {
+    "featureNumber": "F10011",
+    "epicNumber": "E1006",
+    "featureHeading": "Travel Credits and Voucher Management",
+    "featureDescription": "Create, validate, apply, and track airline travel credits and promotional vouchers. Enforce expiration, currency, ownership, and usage rules while preventing duplicate redemption.",
+    "startDate": "08-Jun-2026",
+    "endDate": "28-Jun-2026",
+    "featureSize": "M",
+    "release": "2026.06"
+  },
+  {
+    "featureNumber": "F10012",
+    "epicNumber": "E1006",
+    "featureHeading": "Ancillary Services and Special Assistance",
+    "featureDescription": "Allow customers to request meals, wheelchair assistance, pet travel, priority boarding, lounge access, and other ancillary services while validating eligibility and operational constraints.",
+    "startDate": "02-Jun-2026",
+    "endDate": "23-Jun-2026",
+    "featureSize": "M",
+    "release": "2026.06"
+  },
+  {
+    "featureNumber": "F10013",
+    "epicNumber": "E1007",
+    "featureHeading": "Multi-city and International Booking",
+    "featureDescription": "Extend booking to multi-city and international itineraries with passport information, destination requirements, international fare rules, connecting segments, and traveler document validation.",
+    "startDate": "04-Jul-2026",
+    "endDate": "26-Jul-2026",
+    "featureSize": "XL",
+    "release": "2026.07"
+  },
+  {
+    "featureNumber": "F10014",
+    "epicNumber": "E1007",
+    "featureHeading": "Booking Management and Itinerary Servicing",
+    "featureDescription": "Provide a manage-booking experience for retrieving reservations, updating contact details, reviewing itinerary changes, modifying eligible flights, managing seats, and accessing receipts and travel documents.",
+    "startDate": "06-Jul-2026",
+    "endDate": "29-Jul-2026",
+    "featureSize": "L",
+    "release": "2026.07"
+  },
+  {
+    "featureNumber": "F10015",
+    "epicNumber": "E1008",
+    "featureHeading": "Airport Operations Gate and Boarding Integration",
+    "featureDescription": "Integrate customer-facing travel experiences with gate and boarding events. Surface gate changes, boarding groups, boarding status, final-call events, and boarded passenger status from operational systems.",
+    "startDate": "08-Aug-2026",
+    "endDate": "01-Sep-2026",
+    "featureSize": "L",
+    "release": "2026.08"
+  },
+  {
+    "featureNumber": "F10016",
+    "epicNumber": "E1008",
+    "featureHeading": "Customer Support Booking Assistance",
+    "featureDescription": "Provide support agents with booking lookup, itinerary context, payment and refund status, disruption history, baggage events, and controlled servicing actions to resolve customer travel issues.",
+    "startDate": "02-Aug-2026",
+    "endDate": "27-Aug-2026",
+    "featureSize": "L",
+    "release": "2026.08"
+  },
+  {
+    "featureNumber": "F10017",
+    "epicNumber": "E1009",
+    "featureHeading": "Personalized Travel Recommendations",
+    "featureDescription": "Generate personalized destination, schedule, cabin, and ancillary recommendations using customer preferences and recent travel behavior while respecting privacy and recommendation eligibility rules.",
+    "startDate": "04-Sep-2026",
+    "endDate": "30-Sep-2026",
+    "featureSize": "M",
+    "release": "2026.09"
+  },
+  {
+    "featureNumber": "F10018",
+    "epicNumber": "E1009",
+    "featureHeading": "Fare Alerts and Price Monitoring",
+    "featureDescription": "Allow customers to monitor selected routes and travel dates for fare changes. Generate alerts when prices fall below configured thresholds or when meaningful fare changes occur.",
+    "startDate": "06-Sep-2026",
+    "endDate": "24-Sep-2026",
+    "featureSize": "M",
+    "release": "2026.09"
+  },
+  {
+    "featureNumber": "F10019",
+    "epicNumber": "E1010",
+    "featureHeading": "Corporate Travel Policy and Approval",
+    "featureDescription": "Support corporate travelers with company travel policies, preferred fares, cost-center capture, approval workflows, out-of-policy warnings, and business travel reporting.",
+    "startDate": "08-Oct-2026",
+    "endDate": "27-Oct-2026",
+    "featureSize": "XL",
+    "release": "2026.10"
+  },
+  {
+    "featureNumber": "F10020",
+    "epicNumber": "E1010",
+    "featureHeading": "Platform Reliability and Booking Observability",
+    "featureDescription": "Improve booking-platform reliability with distributed tracing, transaction correlation, payment and booking metrics, alerting, retry visibility, operational dashboards, and failure diagnostics across critical travel flows.",
+    "startDate": "02-Oct-2026",
+    "endDate": "22-Oct-2026",
+    "featureSize": "L",
+    "release": "2026.10"
+  }
+]
